@@ -260,6 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c5d8bee7a3cb1408b2eb292254afda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundDrag: 1.5
-  turnSpeed: 4
+  groundDrag: 1.7
+  turnSpeed: 4.5
   moveSpeed: 12

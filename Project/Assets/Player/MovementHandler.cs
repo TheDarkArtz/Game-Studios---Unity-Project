@@ -16,6 +16,10 @@ public class MovementHandler : MonoBehaviour
    
     private float lerp;
 
+    private void Awake(){
+        DontDestroyOnLoad(this);
+    }
+
     // gets the Character Controller and assigns it to the varible
     private void Start() {
         rb = gameObject.GetComponent<Rigidbody>();
