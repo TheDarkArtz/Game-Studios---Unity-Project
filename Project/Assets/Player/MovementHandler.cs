@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class MovementHandler : MonoBehaviour
 {
+    private PlayerControls playerControls;
+    private InputAction movementActon;
+
     [Header("Movement")]
     [SerializeField] private float groundDrag;
     [SerializeField] private float turnSpeed;
@@ -13,11 +14,11 @@ public class MovementHandler : MonoBehaviour
 
     private Rigidbody rb;
     private Vector2 movementInput = Vector2.zero;
-   
     private float lerp;
 
     private void Awake(){
         DontDestroyOnLoad(this);
+        playerControls = new PlayerControls();
     }
 
     // gets the Character Controller and assigns it to the varible
@@ -26,8 +27,17 @@ public class MovementHandler : MonoBehaviour
         rb.drag = groundDrag;
     }
 
+    // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
+    private void OnEnable() {
+        movementActon = playerControls.Player.Movement;
+        movementActon.Enable();
+    }
+    private void OnDisable() {
+        movementActon.Disable();
+    }
+
     // Unity Event to get the input axis
-    public void OnMove(InputAction.CallbackContext context)
+    private void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
     }
@@ -41,6 +51,7 @@ public class MovementHandler : MonoBehaviour
             rb.velocity = targetVelocity;
         }
 
+        Vector2 movementInput = movementActon.ReadValue<Vector2>();
         if(movementInput != Vector2.zero)
         {
             Vector3 faceDirection = new Vector3(movementInput.x, 0f, movementInput.y);
@@ -51,6 +62,7 @@ public class MovementHandler : MonoBehaviour
     // Update function to actually move the player
    private void FixedUpdate()
    {
+        Vector2 movementInput = movementActon.ReadValue<Vector2>();
         Vector3 moveVector = new Vector3(movementInput.x,0,movementInput.y);
         rb.AddForce(moveVector * moveSpeed, ForceMode.Force);
     }
