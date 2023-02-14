@@ -7,11 +7,16 @@ public class MenuController : MonoBehaviour
 {
     [Header("Scene Crossfade Controls")]
     [SerializeField] private Animator crossFadeTransistion;
-    [SerializeField] private float transistionTime = 1f;
+    [SerializeField] private float transistionTime = 2;
+    [SerializeField] private Animator musicFadeTransistion;
+
+    private AudioSource audioSource;
 
     private void Awake() 
     {
         Cursor.lockState = CursorLockMode.Confined;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayGame()
@@ -28,6 +33,7 @@ public class MenuController : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         crossFadeTransistion.SetTrigger("Start");
+        musicFadeTransistion.SetTrigger("Start");
 
         yield return new WaitForSeconds(transistionTime);
 
