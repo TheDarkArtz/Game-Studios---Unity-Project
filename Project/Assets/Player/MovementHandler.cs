@@ -55,7 +55,7 @@ public class MovementHandler : MonoBehaviour
         if(movementInput != Vector2.zero)
         {
             Vector3 faceDirection = new Vector3(movementInput.x, 0f, movementInput.y);
-            transform.forward = Vector3.Lerp(transform.forward, faceDirection, Time.deltaTime * turnSpeed);
+            transform.forward = Vector3.Lerp(transform.forward, faceDirection, turnSpeed * Time.deltaTime);
         }
     }
 
