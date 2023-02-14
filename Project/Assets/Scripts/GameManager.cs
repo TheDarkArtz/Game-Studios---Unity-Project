@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Load UI Canvas On Start")]
-    public GameObject UI;
+    [SerializeField] private GameObject UI;
 
     void Awake() 
     {
