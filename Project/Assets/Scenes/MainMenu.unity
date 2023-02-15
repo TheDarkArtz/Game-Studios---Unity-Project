@@ -845,6 +845,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2376336120185846668, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: m_AllowJoining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376336120185846668, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2376336120185846669, guid: 89c9eac94f1e301419c40304084a1648,
         type: 3}
       propertyPath: m_RootOrder
