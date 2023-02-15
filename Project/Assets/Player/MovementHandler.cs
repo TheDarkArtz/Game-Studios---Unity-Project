@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementHandler : MonoBehaviour
 {
+    private PlayerInput playerInput;
     private PlayerControls playerControls;
     private InputAction movementActon;
     private InputAction jumpAction;
@@ -23,6 +24,8 @@ public class MovementHandler : MonoBehaviour
     [Header("Ground")]
     [SerializeField] LayerMask isGround;
 
+    private Vector2 movementInput = Vector2.zero;
+
     private bool grounded = false;
     private bool canJump = true;
 
@@ -33,10 +36,11 @@ public class MovementHandler : MonoBehaviour
     private float lerp;
 
     private void Awake(){
-        playerControls = new PlayerControls();
-
+        //playerControls = new PlayerControls();
+        
         rb = gameObject.GetComponent<Rigidbody>();
         capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        playerInput = gameObject.GetComponent<PlayerInput>();
     }
 
     // gets the Character Controller and assigns it to the varible
@@ -47,23 +51,28 @@ public class MovementHandler : MonoBehaviour
 
     // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
     private void OnEnable() {
-        
+        //playerControls.
+        //movementActon = playerControls.Player.Movement;
+        //movementActon.Enable();
 
-        movementActon = playerControls.Player.Movement;
-        movementActon.Enable();
-
-        jumpAction = playerControls.Player.Jump;
-        jumpAction.performed += OnJump;
-        jumpAction.Enable();
+        //jumpAction = playerControls.Player.Jump;
+        //jumpAction.performed += OnJump;
+        //jumpAction.Enable();
     }
     private void OnDisable() {
-        movementActon.Disable();
-        jumpAction.Disable();
+        //movementActon.Disable();
+        //jumpAction.Disable();
     }
 
     // Jump
-    private void OnJump(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
+        movementInput = context.ReadValue<Vector2>();
+    }
+    // Jump
+    public void OnJump(InputAction.CallbackContext context)
+    {
+
         if (canJump && grounded)
         {
             canJump = false;
@@ -85,7 +94,7 @@ public class MovementHandler : MonoBehaviour
         }
 
         // Rotate Character
-        Vector2 movementInput = movementActon.ReadValue<Vector2>();
+        //Vector2 movementInput = movementActon.ReadValue<Vector2>();
         if(movementInput != Vector2.zero)
         {
             Vector3 faceDirection = new Vector3(movementInput.x, 0f, movementInput.y);
@@ -102,7 +111,7 @@ public class MovementHandler : MonoBehaviour
     // Update function to actually move the player
    private void FixedUpdate()
    {
-        Vector2 movementInput = movementActon.ReadValue<Vector2>();
+        //Vector2 movementInput = movementActon.ReadValue<Vector2>();
         Vector3 moveVector = new Vector3(movementInput.x,0,movementInput.y);
         
         currentMovmentMultiplier = 1;
