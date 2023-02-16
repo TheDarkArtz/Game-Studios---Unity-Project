@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Load UI Canvas On Start")]
     public GameObject UI;
+    public static int money = 0;
     
     void Awake() 
     {
