@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    private PlayerInputManager manager;
 
     private void Awake() {
        DontDestroyOnLoad(this);
