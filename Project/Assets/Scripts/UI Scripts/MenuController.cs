@@ -10,6 +10,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private float transistionTime = 2;
     [SerializeField] private Animator musicFadeTransistion;
     private AudioSource audioSource;
+
+    [Header("Menu Transitions")]
+    [SerializeField] private Animator camaraTransistion;
     [SerializeField] private Animator menuTransistion;
 
     [Header("")]
@@ -28,7 +31,14 @@ public class MenuController : MonoBehaviour
 
     public void CharacterSelectMenu()
     {
+        camaraTransistion.SetTrigger("StartChr");
+        menuTransistion.SetTrigger("GoToChr");
+    }
 
+    public void BackToMainMenu()
+    {
+        camaraTransistion.SetTrigger("StartMenu");
+        menuTransistion.SetTrigger("GoToMenu");
     }
 
     //The quit game event. Called by the quit game button.
@@ -65,7 +75,7 @@ public class MenuController : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         crossFadeTransistion.SetTrigger("Start");
-        musicFadeTransistion.SetTrigger("Start");
+        musicFadeTransistion.SetTrigger("StartFade");
 
         yield return new WaitForSeconds(transistionTime);
 
