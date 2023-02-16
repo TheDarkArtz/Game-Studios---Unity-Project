@@ -9,24 +9,57 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Animator crossFadeTransistion;
     [SerializeField] private float transistionTime = 2;
     [SerializeField] private Animator musicFadeTransistion;
-
     private AudioSource audioSource;
+    [SerializeField] private Animator menuTransistion;
+
+    [Header("")]
+    [SerializeField] private GameObject[] characters;
+    public int selectedCharacter = 0;
+
+    
 
     private void Awake() 
     {
+        // Displays the mouse, but locks it to the game screen.
         Cursor.lockState = CursorLockMode.Confined;
 
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayGame()
+    public void CharacterSelectMenu()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+
     }
+
+    //The quit game event. Called by the quit game button.
     public void QuitGame()
     {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    public void NextCharacter()
+    {
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter = (selectedCharacter + 1) % characters.Length;
+        characters[selectedCharacter].SetActive(true);
+    }
+
+    public void PreviousCharacter()
+    {
+        characters[selectedCharacter].SetActive(false);
+        selectedCharacter --;
+        if (selectedCharacter < 0)
+        {
+            selectedCharacter += characters.Length;
+        }
+        characters[selectedCharacter].SetActive(true);
+    }
+
+    //The play game event. Called by the play game button.
+    public void PlayGame()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     IEnumerator LoadLevel(int levelIndex)
@@ -38,4 +71,7 @@ public class MenuController : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
     }
+    
+
+    
 }
