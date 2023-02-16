@@ -1,45 +1,87 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 [RequireComponent(typeof(Rigidbody))]
 public class MovementHandler : MonoBehaviour
 {
+    private PlayerInput playerInput;
     private PlayerControls playerControls;
     private InputAction movementActon;
+    private InputAction jumpAction;
 
     [Header("Movement")]
     [SerializeField] private float groundDrag;
     [SerializeField] private float turnSpeed;
-    [SerializeField] private float moveSpeed;
+    [Min(1)] [SerializeField] private float moveSpeed;
 
-    private Rigidbody rb;
+    [Header("Jumping")]
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpCooldown;
+    [Range(0,2)] [SerializeField] private float movementMultiplier;
+
+    [Header("Ground")]
+    [SerializeField] LayerMask isGround;
+
     private Vector2 movementInput = Vector2.zero;
+
+    private bool grounded = false;
+    private bool canJump = true;
+
+    private CapsuleCollider capsuleCollider;
+    private Rigidbody rb;
+    
+    private float currentMovmentMultiplier;
     private float lerp;
 
     private void Awake(){
-        DontDestroyOnLoad(this);
-        playerControls = new PlayerControls();
+        //playerControls = new PlayerControls();
+        
+        rb = gameObject.GetComponent<Rigidbody>();
+        capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        playerInput = gameObject.GetComponent<PlayerInput>();
     }
 
     // gets the Character Controller and assigns it to the varible
     private void Start() {
-        rb = gameObject.GetComponent<Rigidbody>();
+        currentMovmentMultiplier = movementMultiplier;
         rb.drag = groundDrag;
     }
 
     // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
     private void OnEnable() {
-        movementActon = playerControls.Player.Movement;
-        movementActon.Enable();
+        //playerControls.
+        //movementActon = playerControls.Player.Movement;
+        //movementActon.Enable();
+
+        //jumpAction = playerControls.Player.Jump;
+        //jumpAction.performed += OnJump;
+        //jumpAction.Enable();
     }
     private void OnDisable() {
-        movementActon.Disable();
+        //movementActon.Disable();
+        //jumpAction.Disable();
     }
 
-    // Unity Event to get the input axis
-    private void OnMove(InputAction.CallbackContext context)
+    // Jump
+    public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+    }
+    // Jump
+    public void OnJump(InputAction.CallbackContext context)
+    {
+
+        if (canJump && grounded)
+        {
+            canJump = false;
+            
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+            StartCoroutine(ResetJump());
+        }
     }
 
     // limiting players velocity
@@ -47,24 +89,43 @@ public class MovementHandler : MonoBehaviour
         Vector3 currentVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.y);
         if(currentVelocity.magnitude > moveSpeed)
         {
-            Vector3 targetVelocity = currentVelocity.normalized * moveSpeed;
+            Vector3 targetVelocity = (currentVelocity.normalized * moveSpeed) * currentMovmentMultiplier;
             rb.velocity = targetVelocity;
         }
 
-        Vector2 movementInput = movementActon.ReadValue<Vector2>();
+        // Rotate Character
+        //Vector2 movementInput = movementActon.ReadValue<Vector2>();
         if(movementInput != Vector2.zero)
         {
             Vector3 faceDirection = new Vector3(movementInput.x, 0f, movementInput.y);
-            transform.forward = Vector3.Lerp(transform.forward, faceDirection, Time.deltaTime * turnSpeed);
+            transform.forward = Vector3.Lerp(transform.forward, faceDirection, turnSpeed * Time.deltaTime);
         }
+
+        grounded = Physics.Raycast(transform.position, Vector3.down, capsuleCollider.height * 0.5f + 0.2f, isGround);
+        if (grounded)
+            rb.drag = groundDrag;
+        else
+            rb.drag = 0.5f;
     }
 
     // Update function to actually move the player
    private void FixedUpdate()
    {
-        Vector2 movementInput = movementActon.ReadValue<Vector2>();
+        //Vector2 movementInput = movementActon.ReadValue<Vector2>();
         Vector3 moveVector = new Vector3(movementInput.x,0,movementInput.y);
-        rb.AddForce(moveVector * moveSpeed, ForceMode.Force);
+        
+        currentMovmentMultiplier = 1;
+
+        if(grounded == false)
+            currentMovmentMultiplier = movementMultiplier;
+
+        rb.AddForce((moveVector * moveSpeed) * currentMovmentMultiplier, ForceMode.Force);
     }
 
+
+    private IEnumerator ResetJump()
+    {
+        yield return new WaitForSeconds(jumpCooldown);
+        canJump = true;
+    }
 }
