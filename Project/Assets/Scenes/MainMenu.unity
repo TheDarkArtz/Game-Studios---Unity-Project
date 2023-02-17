@@ -1651,6 +1651,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: load1Character
+      value: 
+      objectReference: {fileID: 1832107630}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: load2Character
+      value: 
+      objectReference: {fileID: 1568497571}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: load3Character
+      value: 
+      objectReference: {fileID: 800077819}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: load4Character
+      value: 
+      objectReference: {fileID: 2035331537}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: player1Character0bject
+      value: 
+      objectReference: {fileID: 1832107625}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: player2Character0bject
+      value: 
+      objectReference: {fileID: 1568497567}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: player3Character0bject
+      value: 
+      objectReference: {fileID: 800077815}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: player4Character0bject
+      value: 
+      objectReference: {fileID: 2035331533}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c9eac94f1e301419c40304084a1648, type: 3}
 --- !u!1001 &477934735
