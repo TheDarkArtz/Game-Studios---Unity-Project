@@ -175,7 +175,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""66e01164-ccdf-48a3-b94d-b3082ecf9f58"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Navigation"",
                     ""type"": ""Button"",
                     ""id"": ""1c4fd6b9-8a93-46c4-a9d6-ef7c18bbf751"",
                     ""expectedControlType"": ""Button"",
@@ -192,7 +192,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Navigation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -230,7 +230,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-        m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
+        m_Menu_Navigation = m_Menu.FindAction("Navigation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -331,12 +331,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // Menu
     private readonly InputActionMap m_Menu;
     private IMenuActions m_MenuActionsCallbackInterface;
-    private readonly InputAction m_Menu_Newaction;
+    private readonly InputAction m_Menu_Navigation;
     public struct MenuActions
     {
         private @PlayerControls m_Wrapper;
         public MenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Menu_Newaction;
+        public InputAction @Navigation => m_Wrapper.m_Menu_Navigation;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -346,16 +346,16 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_MenuActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
+                @Navigation.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigation;
+                @Navigation.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigation;
+                @Navigation.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigation;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @Navigation.started += instance.OnNavigation;
+                @Navigation.performed += instance.OnNavigation;
+                @Navigation.canceled += instance.OnNavigation;
             }
         }
     }
@@ -385,6 +385,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IMenuActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnNavigation(InputAction.CallbackContext context);
     }
 }
