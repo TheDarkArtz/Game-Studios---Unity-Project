@@ -153,7 +153,7 @@
             "id": "66e01164-ccdf-48a3-b94d-b3082ecf9f58",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Navigation",
                     "type": "Button",
                     "id": "1c4fd6b9-8a93-46c4-a9d6-ef7c18bbf751",
                     "expectedControlType": "Button",
@@ -170,7 +170,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Navigation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

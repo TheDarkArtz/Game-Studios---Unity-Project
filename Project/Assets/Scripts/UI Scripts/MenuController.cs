@@ -17,6 +17,9 @@ public class MenuController : MonoBehaviour
 
     [Header("")]
     [SerializeField] private GameObject[] characters;
+    
+    [Range(0, 4)]
+    public int players;
     public int selectedCharacter = 0;
 
     
