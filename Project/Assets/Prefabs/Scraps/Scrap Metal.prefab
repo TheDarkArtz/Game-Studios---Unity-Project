@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7564607638776005614}
   - component: {fileID: 681924213889011138}
   - component: {fileID: 3965280728489321803}
+  - component: {fileID: -8630968827721953956}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Scrap Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,3 +116,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8630968827721953956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163682381210412255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e4b3bc52d31614184ef53d9e4e738b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
