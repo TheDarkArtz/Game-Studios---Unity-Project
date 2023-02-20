@@ -72,7 +72,6 @@ public class MovementHandler : MonoBehaviour
     // Jump
     public void OnJump(InputAction.CallbackContext context)
     {
-
         if (canJump && grounded)
         {
             canJump = false;

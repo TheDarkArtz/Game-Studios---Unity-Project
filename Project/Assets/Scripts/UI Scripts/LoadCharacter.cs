@@ -1,29 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LoadCharacter : MonoBehaviour
 {
-     [SerializeField] private GameObject[] characters;
+    public delegate void CharacterHandler(int CharacterToChange, int selectedCharacter);
+    public event CharacterHandler OnCharacterChanged;
+
+    [SerializeField] private GameObject[] characters;
     
-    public int selectedCharacter = 0;
+    public Transform spawnPoint;
+    public int id = 0;
+    [SerializeField] private int selectedCharacter = 0;
+    
+    private bool Ready = false;
 
-
-    void Start()
-    {
-        
+    private void Start() {
+        transform.position = spawnPoint.position;
+        characters[selectedCharacter].SetActive(true);
     }
 
-    private void Update() 
+    public void SelectCharacter(InputAction.CallbackContext context)
     {
-        
+        if(context.performed)
+        {
+            characters[selectedCharacter].SetActive(false);
+            selectedCharacter += (int) context.ReadValue<float>();
+            if (selectedCharacter < 0)
+            {
+                selectedCharacter += characters.Length;
+            }
+            else if (selectedCharacter > characters.Length - 1)
+            {
+                selectedCharacter = 0;
+            }
+            characters[selectedCharacter].SetActive(true);
+            OnCharacterChanged?.Invoke(id,selectedCharacter);
+        }
     }
 
+    public void ReadyCharacter(InputAction.CallbackContext context)
+    {
+        Ready = true;
+    }
+
+    /*
     public void NextCharacter()
     {
         characters[selectedCharacter].SetActive(false);
         selectedCharacter = (selectedCharacter + 1) % characters.Length;
         characters[selectedCharacter].SetActive(true);
+        OnCharacterChanged?.Invoke(id,selectedCharacter);
     }
 
     public void PreviousCharacter()
@@ -35,7 +63,7 @@ public class LoadCharacter : MonoBehaviour
             selectedCharacter += characters.Length;
         }
         characters[selectedCharacter].SetActive(true);
+        OnCharacterChanged?.Invoke(id,selectedCharacter);
     }
-
-    
+    */
 }
