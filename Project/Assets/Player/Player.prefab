@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: -2964909658634756469}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,8 +263,12 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1c4fd6b9-8a93-46c4-a9d6-ef7c18bbf751
     m_ActionName: Menu/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cc9f4b66-e635-480d-a58c-846cd78601d4
+    m_ActionName: Menu/Select Character[/Keyboard/a,/Keyboard/d,/SwitchProControllerHID/dpad/left,/SwitchProControllerHID/dpad/right]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
