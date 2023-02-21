@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2064359133530257668}
   - component: {fileID: -576500684946840383}
   - component: {fileID: -2964909658634756469}
+  - component: {fileID: 3119451112062742460}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -263,6 +264,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1c4fd6b9-8a93-46c4-a9d6-ef7c18bbf751
     m_ActionName: Menu/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5775627975003435200}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bfb1ea9d-888b-444f-82a6-dd1571d74f0a
+    m_ActionName: Player/PickUp[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -289,3 +306,16 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 33792
+--- !u!114 &3119451112062742460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775627975003435200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cc021fea47e04479191225d351389f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HAND: {fileID: 0}
