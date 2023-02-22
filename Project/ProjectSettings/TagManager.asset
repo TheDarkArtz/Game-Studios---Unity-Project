@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UI
   - Grabbable
+  - Prop
   layers:
   - Default
   - TransparentFX
