@@ -1,54 +1,82 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI;
-    [SerializeField] private GameObject gameUI;
+    //[SerializeField] private GameObject gameUI;
+    private PlayerControls controls;
 
-    void Update()
+    private void Awake() 
     {
-        // if (however i get the start button in the new Input method.)
-        //{
-            //if(gameIsPaused == true)
-            //{
-                //Resume();
-           // }
-       // }
-      //  else
-       // {
-       //     {
-       //         Pause();
-       //     }
-      //  }
+        controls = new PlayerControls();
+        controls.Menu.Start.performed += ctx => Pause();
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        gameUI.SetActive(true);
+        //gameUI.SetActive(true);
         Time.timeScale = 1f;
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         AudioListener.pause = false;
         gameIsPaused = false;
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
-        gameUI.SetActive(false);
-        Time.timeScale = 0f;
-        Cursor.visible = true;
-        AudioListener.pause = true;
-        gameIsPaused = true;
+        if(gameIsPaused == true)
+        {
+            Resume();
+        }
+        else
+        {
+            pauseMenuUI.SetActive(true);
+            //gameUI.SetActive(false);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.Confined;
+            AudioListener.pause = true;
+            gameIsPaused = true;
+        }
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        AudioListener.pause = false;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        AudioListener.pause = false;
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
         Debug.Log("Quitting Game");
         Application.Quit();
+    }
+
+    private void OnEnable() 
+    {
+        controls.Menu.Enable();
+    }
+
+    private void OnDisable() 
+    {
+        controls.Menu.Disable();
     }
 
 }
