@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca507822992d64d984abb72d86330d, type: 3}
+  m_Name: Recipes
+  m_EditorClassIdentifier: 
+  Materials:
+  - Item:
+    - Bolts
+    Amount: 02000000
+  Results:
+  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}

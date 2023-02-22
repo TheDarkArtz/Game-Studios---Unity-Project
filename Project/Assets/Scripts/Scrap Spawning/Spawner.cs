@@ -41,7 +41,7 @@ public class Spawner : MonoBehaviour
         {
             for (int i = entry.Value; i < spawnAmount; i++)
             {
-                int arrayIndex = Random.Range(0, prefabs.Length - 1);
+                int arrayIndex = Random.Range(0, prefabs.Length);
                 GameObject prefab = prefabs[arrayIndex];
 
                 int randomRangeX = Random.Range(-spawnRadius, spawnRadius);
@@ -66,7 +66,11 @@ public class Spawner : MonoBehaviour
 
     private void scrapDestroyed(string name)
     {
-        print($"{name} was destroyed");
-        currentItems[name] -= 1;
+        //print($"{name} was destroyed");
+        bool istrue = currentItems.TryGetValue(name, out int val);
+        if(istrue)
+        {
+            currentItems[name] -= 1;
+        }
     }
 }

@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2064359133530257668}
   - component: {fileID: -576500684946840383}
   - component: {fileID: -2964909658634756469}
+  - component: {fileID: 8587031162106697253}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -261,12 +262,28 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/space,/SwitchProControllerHID/buttonEast]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 1c4fd6b9-8a93-46c4-a9d6-ef7c18bbf751
-    m_ActionName: Menu/New action
+    m_ActionId: e736d88e-08a3-4a0d-b24b-2e574b67f7d0
+    m_ActionName: Menu/Character Select[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: cc9f4b66-e635-480d-a58c-846cd78601d4
-    m_ActionName: Menu/Select Character[/Keyboard/a,/Keyboard/d,/SwitchProControllerHID/dpad/left,/SwitchProControllerHID/dpad/right]
+    m_ActionId: 599e342b-4b42-4356-80cc-68f3b63caff4
+    m_ActionName: Menu/Ready[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8587031162106697253}
+        m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
+        m_MethodName: PickUpObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ac8038e3-3304-4bf1-83f8-4776488b53af
+    m_ActionName: Player/Pickup[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -293,3 +310,18 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 33792
+--- !u!114 &8587031162106697253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775627975003435200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d7608d5d33d5f48b4eba0e40bb58e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatToHit:
+    serializedVersion: 2
+    m_Bits: 2048
