@@ -8,7 +8,6 @@ public class ScrapCrafting : MonoBehaviour
     private Dictionary<string,int> currentCrafting = new Dictionary<string, int>();
 
     private void OnTriggerEnter(Collider other) {
-        print(other.tag);
         if (other.CompareTag("Scrap"))
         {
             if(!currentCrafting.TryGetValue(other.name, out int val))
