@@ -407,6 +407,7 @@ RectTransform:
   - {fileID: 1872907549}
   - {fileID: 995572937}
   - {fileID: 964476631}
+  - {fileID: 2017683422}
   m_Father: {fileID: 1033180782}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -481,7 +482,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 964476631}
+    m_TransformParent: {fileID: 304979601}
     m_Modifications:
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
@@ -496,7 +497,7 @@ PrefabInstance:
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
@@ -521,12 +522,12 @@ PrefabInstance:
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1420
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 255.0658
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
@@ -566,7 +567,7 @@ PrefabInstance:
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 600
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6106134139307290885, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
@@ -596,7 +597,7 @@ PrefabInstance:
     - target: {fileID: 6106134139307290886, guid: a9fd4cd1402325843acc752af1abd573,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9fd4cd1402325843acc752af1abd573, type: 3}
@@ -855,7 +856,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1061497250}
-  - {fileID: 2017683422}
   - {fileID: 1236782784}
   m_Father: {fileID: 304979601}
   m_RootOrder: 2
@@ -1366,7 +1366,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 964476631}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1393,10 +1393,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Congradulations!
+  m_text: 'Congratulations!
 
 
-    For you and your cowokers hard work you''ve made
+    For you and your co-workers hard work you''ve made
     a total of:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.4
+  m_fontSize: 54.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
