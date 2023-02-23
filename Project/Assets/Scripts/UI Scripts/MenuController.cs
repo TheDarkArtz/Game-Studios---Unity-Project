@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class MenuController : MonoBehaviour
 {
+    public PlayerInputManager playerInputManager;
+
     [Header("Scene Crossfade Controls")]
     [SerializeField] private Animator crossFadeTransistion;
     [SerializeField] private float transistionTime = 2;
@@ -41,12 +43,14 @@ public class MenuController : MonoBehaviour
     {
         camaraTransistion.SetTrigger("StartChr");
         menuTransistion.SetTrigger("GoToChr");
+        playerInputManager.EnableJoining();
     }
 
     public void BackToMainMenu()
     {
         camaraTransistion.SetTrigger("StartMenu");
         menuTransistion.SetTrigger("GoToMenu");
+        playerInputManager.DisableJoining();
     }
 
     private void joined()
