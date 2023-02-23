@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - UI
+  - Scrap
+  - CraftedScrap
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Materials
   - 
   - 
   - 

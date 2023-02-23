@@ -7,9 +7,9 @@ public class ScrapMaterial : MonoBehaviour
     public delegate void DestroyedHandler(string name);
     public static event DestroyedHandler OnScrapDestroyed;
 
-    [SerializeField] private int value;
+    public int moneyValue;
 
-    private bool pickedUp = false;
+    public bool pickedUp { get; private set; } = false;
     private float coundDown;
     private float timeCreated;
     
@@ -22,19 +22,26 @@ public class ScrapMaterial : MonoBehaviour
     }
 
     private void DestroyGameObject() {
-        OnScrapDestroyed?.Invoke(gameObject.name);
         Destroy(gameObject);
+    }
+    
+    private void OnDestroy() {
+        OnScrapDestroyed?.Invoke(gameObject.name);
     }
 
     //Public methods
-    public void Pickedup()
+    public void PickedUp()
     {
         CancelInvoke(nameof(DestroyGameObject));
         pickedUp = true;
     }
-    private void Dropped()
+    public void Dropped()
     {
         pickedUp = false;
         Invoke(nameof(DestroyGameObject), coundDown);
+    }
+    public void DisableDestroy()
+    {
+        CancelInvoke(nameof(DestroyGameObject));
     }
 }
