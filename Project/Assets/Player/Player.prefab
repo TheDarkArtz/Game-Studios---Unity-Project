@@ -284,6 +284,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ac8038e3-3304-4bf1-83f8-4776488b53af
     m_ActionName: Player/Pickup[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d6101e56-07d0-4225-914e-c76dcc011f4a
+    m_ActionName: Menu/Start[/XInputControllerWindows/start,/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -319,7 +323,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5775627975003435200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d7608d5d33d5f48b4eba0e40bb58e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a8a36ef7af662f4185b36ad6e54951d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   whatToHit:

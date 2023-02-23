@@ -8,19 +8,20 @@ public class PauseMenu : MonoBehaviour
 {
     private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI;
-    //[SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject gameUI;
     private PlayerControls controls;
 
     private void Awake() 
     {
         controls = new PlayerControls();
         controls.Menu.Start.performed += ctx => Pause();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        //gameUI.SetActive(true);
+        gameUI.SetActive(true);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         AudioListener.pause = false;
@@ -36,7 +37,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             pauseMenuUI.SetActive(true);
-            //gameUI.SetActive(false);
+            gameUI.SetActive(false);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.Confined;
             AudioListener.pause = true;

@@ -211,6 +211,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6101e56-07d0-4225-914e-c76dcc011f4a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -389,6 +398,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Ready"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbc0c3e5-8114-485d-bc12-8b89d34bd065"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf01fac3-2543-478c-9628-c8ff4f3c9655"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -442,6 +473,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_CharacterSelect = m_Menu.FindAction("Character Select", throwIfNotFound: true);
         m_Menu_Ready = m_Menu.FindAction("Ready", throwIfNotFound: true);
+        m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -552,12 +584,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_CharacterSelect;
     private readonly InputAction m_Menu_Ready;
+    private readonly InputAction m_Menu_Start;
     public struct MenuActions
     {
         private @PlayerControls m_Wrapper;
         public MenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @CharacterSelect => m_Wrapper.m_Menu_CharacterSelect;
         public InputAction @Ready => m_Wrapper.m_Menu_Ready;
+        public InputAction @Start => m_Wrapper.m_Menu_Start;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -573,6 +607,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Ready.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnReady;
                 @Ready.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnReady;
                 @Ready.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnReady;
+                @Start.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnStart;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -583,6 +620,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Ready.started += instance.OnReady;
                 @Ready.performed += instance.OnReady;
                 @Ready.canceled += instance.OnReady;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
             }
         }
     }
@@ -615,5 +655,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnCharacterSelect(InputAction.CallbackContext context);
         void OnReady(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
     }
 }

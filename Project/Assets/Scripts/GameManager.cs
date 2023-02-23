@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     void Awake() 
     {
         UI.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Start() {
