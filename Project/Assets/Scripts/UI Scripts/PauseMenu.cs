@@ -70,6 +70,16 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void DebugNextScene()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        AudioListener.pause = false;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
     private void OnEnable() 
     {
         controls.Menu.Enable();

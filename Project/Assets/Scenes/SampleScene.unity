@@ -1223,21 +1223,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1563704730}
-    - target: {fileID: 2423567745518084526, guid: 2b9fc594025e2724eb3e401d6fbeb240,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
     - target: {fileID: 2423567746440071083, guid: 2b9fc594025e2724eb3e401d6fbeb240,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1563704730}
-    - target: {fileID: 2423567746440071083, guid: 2b9fc594025e2724eb3e401d6fbeb240,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 2423567746469608468, guid: 2b9fc594025e2724eb3e401d6fbeb240,
         type: 3}
       propertyPath: m_Name
@@ -1292,21 +1282,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423567746469608469, guid: 2b9fc594025e2724eb3e401d6fbeb240,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423567746469608469, guid: 2b9fc594025e2724eb3e401d6fbeb240,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423567746469608469, guid: 2b9fc594025e2724eb3e401d6fbeb240,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2423567746469608469, guid: 2b9fc594025e2724eb3e401d6fbeb240,
         type: 3}
@@ -1373,10 +1348,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1563704730}
-    - target: {fileID: 2423567746995869296, guid: 2b9fc594025e2724eb3e401d6fbeb240,
+    - target: {fileID: 6946266936250940178, guid: 2b9fc594025e2724eb3e401d6fbeb240,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1563704730}
+    - target: {fileID: 6946266936250940178, guid: 2b9fc594025e2724eb3e401d6fbeb240,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
+      value: DebugNextScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b9fc594025e2724eb3e401d6fbeb240, type: 3}
