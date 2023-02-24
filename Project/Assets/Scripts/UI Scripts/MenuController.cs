@@ -18,6 +18,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Animator camaraTransistion;
     [SerializeField] private Animator menuTransistion;
 
+
     /* -- this really needed?
     [Header("")]
     [SerializeField] private GameObject[] characters;
