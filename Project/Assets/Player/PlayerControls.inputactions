@@ -91,7 +91,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b0f93e12-bcb9-45f8-be71-5b702073e2ca",
+                    "id": "5872e857-4693-40f3-a644-70dd2bf6c5ce",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
@@ -185,6 +185,15 @@
                     "name": "Ready",
                     "type": "Button",
                     "id": "599e342b-4b42-4356-80cc-68f3b63caff4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "d6101e56-07d0-4225-914e-c76dcc011f4a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -367,6 +376,28 @@
                     "action": "Ready",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbc0c3e5-8114-485d-bc12-8b89d34bd065",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf01fac3-2543-478c-9628-c8ff4f3c9655",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -378,7 +409,7 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
-                    "isOptional": false,
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
@@ -404,7 +435,7 @@
                 },
                 {
                     "devicePath": "<XInputController>",
-                    "isOptional": true,
+                    "isOptional": false,
                     "isOR": false
                 }
             ]
