@@ -16,5 +16,9 @@ MonoBehaviour:
   - Item:
     - Bolts
     Amount: 02000000
+  - Item:
+    - Wires
+    Amount: 02000000
   Results:
   - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
+  - {fileID: 8262426616072779729, guid: dc3fd1d87704c1a44bc30a55d7909d4f, type: 3}

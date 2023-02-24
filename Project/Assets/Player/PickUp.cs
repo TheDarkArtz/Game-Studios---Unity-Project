@@ -11,6 +11,13 @@ public class PickUp : MonoBehaviour
 
     ScrapMaterial CurrentScapHeld;
 
+    private PlayerControls controls;
+
+    private void Awake() {
+        controls = new PlayerControls();
+        controls.Menu.Start.performed += ctx => PickUpObject(ctx);
+    }
+
     public void PickUpObject(InputAction.CallbackContext context)
     {
         if (context.performed)

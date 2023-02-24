@@ -27,7 +27,14 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         MoneyUI.text = "$:" + money;
+    }
+
+    private void OnEnable() {
         ScrapSelling.OnMoneyAdded += AddMoney;
+    }
+
+    private void OnDisable() {
+        ScrapSelling.OnMoneyAdded -= AddMoney;
     }
 
     private void AddMoney(int amountToAdd)

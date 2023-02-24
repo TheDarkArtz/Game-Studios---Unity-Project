@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject gameUI;
+    
     private PlayerControls controls;
 
     [Header("Scene Crossfade Controls")]
@@ -103,5 +104,4 @@ public class PauseMenu : MonoBehaviour
     {
         controls.Menu.Disable();
     }
-
 }
