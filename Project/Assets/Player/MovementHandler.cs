@@ -67,7 +67,10 @@ public class MovementHandler : MonoBehaviour
     // Jump
     public void OnMove(InputAction.CallbackContext context)
     {
-        movementInput = context.ReadValue<Vector2>();
+        if(context.performed)
+        {
+            movementInput = context.ReadValue<Vector2>();
+        }
     }
     // Jump
     public void OnJump(InputAction.CallbackContext context)
