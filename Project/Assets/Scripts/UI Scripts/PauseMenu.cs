@@ -11,6 +11,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject gameUI;
     private PlayerControls controls;
 
+    [Header("Scene Crossfade Controls")]
+    [SerializeField] private Animator crossFadeTransistion;
+    [SerializeField] private float transistionTime = 2;
+    [SerializeField] private Animator musicFadeTransistion;
+    private AudioSource audioSource;
+
     private void Awake() 
     {
         controls = new PlayerControls();
@@ -51,8 +57,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         AudioListener.pause = false;
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void MainMenu()
@@ -61,7 +66,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         Cursor.lockState = CursorLockMode.Confined;
         AudioListener.pause = false;
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadLevel(0));
     }
 
     public void QuitGame()
@@ -76,8 +81,17 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         Cursor.lockState = CursorLockMode.Confined;
         AudioListener.pause = false;
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        crossFadeTransistion.SetTrigger("Start");
+        musicFadeTransistion.SetTrigger("StartFade");
+
+        yield return new WaitForSeconds(transistionTime);
+
+        SceneManager.LoadScene(levelIndex);
     }
 
     private void OnEnable() 
