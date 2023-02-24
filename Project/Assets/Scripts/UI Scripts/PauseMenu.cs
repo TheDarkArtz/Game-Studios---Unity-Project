@@ -8,19 +8,26 @@ public class PauseMenu : MonoBehaviour
 {
     private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI;
-    //[SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject gameUI;
     private PlayerControls controls;
+
+    [Header("Scene Crossfade Controls")]
+    [SerializeField] private Animator crossFadeTransistion;
+    [SerializeField] private float transistionTime = 2;
+    [SerializeField] private Animator musicFadeTransistion;
+    private AudioSource audioSource;
 
     private void Awake() 
     {
         controls = new PlayerControls();
         controls.Menu.Start.performed += ctx => Pause();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        //gameUI.SetActive(true);
+        gameUI.SetActive(true);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         AudioListener.pause = false;
@@ -36,7 +43,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             pauseMenuUI.SetActive(true);
-            //gameUI.SetActive(false);
+            gameUI.SetActive(false);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.Confined;
             AudioListener.pause = true;
@@ -50,8 +57,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         AudioListener.pause = false;
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void MainMenu()
@@ -60,13 +66,32 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         Cursor.lockState = CursorLockMode.Confined;
         AudioListener.pause = false;
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadLevel(0));
     }
 
     public void QuitGame()
     {
         Debug.Log("Quitting Game");
         Application.Quit();
+    }
+
+    public void DebugNextScene()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        AudioListener.pause = false;
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        crossFadeTransistion.SetTrigger("Start");
+        musicFadeTransistion.SetTrigger("StartFade");
+
+        yield return new WaitForSeconds(transistionTime);
+
+        SceneManager.LoadScene(levelIndex);
     }
 
     private void OnEnable() 

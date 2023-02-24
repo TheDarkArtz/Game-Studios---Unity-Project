@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pickup",
+                    "type": "Button",
+                    "id": "ac8038e3-3304-4bf1-83f8-4776488b53af",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -145,6 +154,17 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95ee5a23-1572-43fe-97cd-cf0050d076c6",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -173,7 +193,7 @@
                 {
                     "name": "Start",
                     "type": "Button",
-                    "id": "75e70a5e-6d65-4700-8212-c78ed60cba68",
+                    "id": "d6101e56-07d0-4225-914e-c76dcc011f4a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -359,22 +379,22 @@
                 },
                 {
                     "name": "",
-                    "id": "c3fae03d-e621-437b-b4c1-13de86d3e910",
+                    "id": "dbc0c3e5-8114-485d-bc12-8b89d34bd065",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6f8e0b7e-03dd-4c31-8652-adb001b1d96d",
+                    "id": "cf01fac3-2543-478c-9628-c8ff4f3c9655",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
