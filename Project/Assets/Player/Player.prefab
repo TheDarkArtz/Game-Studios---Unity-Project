@@ -261,14 +261,6 @@ MonoBehaviour:
     m_ActionId: 5161ca8b-eb83-42cb-a57f-7a21939389e5
     m_ActionName: Player/Jump[/Keyboard/space,/SwitchProControllerHID/buttonEast]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e736d88e-08a3-4a0d-b24b-2e574b67f7d0
-    m_ActionName: Menu/Character Select[/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 599e342b-4b42-4356-80cc-68f3b63caff4
-    m_ActionName: Menu/Ready[/Keyboard/space]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8587031162106697253}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -286,8 +278,8 @@ MonoBehaviour:
     m_ActionName: Player/Pickup[/Keyboard/f]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: d6101e56-07d0-4225-914e-c76dcc011f4a
-    m_ActionName: Menu/Start[/XInputControllerWindows/start,/Keyboard/escape]
+    m_ActionId: 38e34ea9-6efe-437f-acae-1882975404a6
+    m_ActionName: Menu/Start[/Keyboard/escape,/SwitchProControllerHID/start]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -306,8 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundDrag: 1.7
-  turnSpeed: 4.8
-  moveSpeed: 12
+  turnSpeed: 5
+  moveSpeed: 13.5
   jumpForce: 5
   jumpCooldown: 1
   movementMultiplier: 0.3

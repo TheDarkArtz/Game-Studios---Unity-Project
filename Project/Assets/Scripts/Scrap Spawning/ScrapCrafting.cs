@@ -12,7 +12,7 @@ public class ScrapCrafting : MonoBehaviour
         {
             if(!currentCrafting.TryGetValue(other.name, out int val))
             {
-                print($"make value {other.name}");
+                //print($"make value {other.name}");
                 currentCrafting.Add(other.name, 0);
             }
 
@@ -28,16 +28,22 @@ public class ScrapCrafting : MonoBehaviour
         foreach(ItemAmount x in recipes.Materials)
         {
             var pass = true;
+            Dictionary<string,int> toRemove = new Dictionary<string, int>();
+
             for(int i = 0; i < x.Item.Count; i++)
             {
-                print($"Recipe( Item: {x.Item[i]}, Amount: {x.Amount[i]} )");
+                //print($"Recipe( Item: {x.Item[i]}, Amount: {x.Amount[i]} )");
                 bool isItReal = currentCrafting.TryGetValue(x.Item[i], out int currentlyHave);
                 if(isItReal)
                 {
-                    print($"currently have: {currentlyHave}, Needed: {x.Amount[i]}");
+                    //print($"currently have: {currentlyHave}, Needed: {x.Amount[i]}");
                     if(currentlyHave < x.Amount[i])
                     {
                         pass = false;
+                    }
+                    else
+                    {
+                        toRemove.Add(x.Item[i], x.Amount[i]);
                     }
                 }
                 else
@@ -49,7 +55,15 @@ public class ScrapCrafting : MonoBehaviour
             if(pass == true)
             {
                 print($"Craft Item, {recipes.Results[indexOfItem].name}");
-                currentCrafting[x.Item[indexOfItem]] -= x.Amount[indexOfItem];
+
+                foreach(var entry in toRemove)
+                {
+                    print($"removing, {entry.Key}, {entry.Value}");
+                    currentCrafting[entry.Key] -= entry.Value;
+                    //currentCrafting[x.Item[indexOfItem]] -= x.Amount[indexOfItem];
+                }
+                toRemove.Clear();
+                    
                 makeItem(recipes.Results[indexOfItem]);
             }
 

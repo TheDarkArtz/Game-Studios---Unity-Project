@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject gameUI;
+    
     private PlayerControls controls;
 
     private void Awake() 
@@ -89,5 +90,4 @@ public class PauseMenu : MonoBehaviour
     {
         controls.Menu.Disable();
     }
-
 }

@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementHandler : MonoBehaviour
 {
+    /*
     private PlayerInput playerInput;
     private PlayerControls playerControls;
-    private InputAction movementActon;
-    private InputAction jumpAction;
+    */
 
     [Header("Movement")]
     [SerializeField] private float groundDrag;
@@ -40,7 +40,11 @@ public class MovementHandler : MonoBehaviour
         
         rb = gameObject.GetComponent<Rigidbody>();
         capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+
+        /*
         playerInput = gameObject.GetComponent<PlayerInput>();
+        playerInput.onActionTriggered += onActionTriggered;
+        */
     }
 
     // gets the Character Controller and assigns it to the varible
@@ -51,18 +55,26 @@ public class MovementHandler : MonoBehaviour
 
     // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
     private void OnEnable() {
-        //playerControls.
-        //movementActon = playerControls.Player.Movement;
-        //movementActon.Enable();
 
-        //jumpAction = playerControls.Player.Jump;
-        //jumpAction.performed += OnJump;
-        //jumpAction.Enable();
     }
     private void OnDisable() {
-        //movementActon.Disable();
-        //jumpAction.Disable();
+
     }
+
+    /*
+    private void onActionTriggered(InputAction.CallbackContext context)
+    {
+        switch (context.action.name)
+        {
+            case "Movement":
+                OnMove(context);
+                break;
+            case "Jump":
+                OnJump(context);
+                break;
+        }
+    }
+    */
 
     // Jump
     public void OnMove(InputAction.CallbackContext context)
