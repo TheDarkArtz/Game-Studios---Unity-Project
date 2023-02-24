@@ -16,6 +16,8 @@ public class PlayerManager : MonoBehaviour
     public int[] playerCharacterInt = new int[] {0,0,0,0};
     [SerializeField] private Transform[] SpawnLocations;
     [SerializeField] private int currentAmountOfPlayers = 0;
+    public GameObject[] characterSelectPanel;
+
 
     /*
     public int player1CharacterInt;
@@ -38,11 +40,12 @@ public class PlayerManager : MonoBehaviour
 
         currentAmountOfPlayers++;
         OnJoined?.Invoke();
+        characterSelectPanel[currentAmountOfPlayers - 1].SetActive(false);
     }
 
     public void OnPlayerLeft()
     {
-        
+
     }
 
     private void UpdateCharacter(int CharacterToChange, int selectedCharacter)

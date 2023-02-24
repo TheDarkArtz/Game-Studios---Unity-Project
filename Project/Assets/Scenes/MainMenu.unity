@@ -2014,7 +2014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681720577}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4, y: 0.842, z: -12.383}
+  m_LocalPosition: {x: -4.5, y: 0.842, z: -12.383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3340,7 +3340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870892426}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4, y: 0.842, z: -7.613}
+  m_LocalPosition: {x: -4.5, y: 0.842, z: -7.613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4631,7 +4631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179403276}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4, y: 0.842, z: -10.783}
+  m_LocalPosition: {x: -4.5, y: 0.842, z: -10.783}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5735,7 +5735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475410163}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4, y: 0.842, z: -9.191}
+  m_LocalPosition: {x: -4.5, y: 0.842, z: -9.191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6765,7 +6765,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41594
+  m_Name: pb_Mesh51086
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8366,6 +8366,31 @@ PrefabInstance:
       propertyPath: SpawnLocations.Array.data[3]
       value: 
       objectReference: {fileID: 870892427}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: characterSelectPanel.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: characterSelectPanel.Array.data[0]
+      value: 
+      objectReference: {fileID: 999930841}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: characterSelectPanel.Array.data[1]
+      value: 
+      objectReference: {fileID: 2081250804}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: characterSelectPanel.Array.data[2]
+      value: 
+      objectReference: {fileID: 1087491669}
+    - target: {fileID: 2376336120185846670, guid: 89c9eac94f1e301419c40304084a1648,
+        type: 3}
+      propertyPath: characterSelectPanel.Array.data[3]
+      value: 
+      objectReference: {fileID: 1166739990}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c9eac94f1e301419c40304084a1648, type: 3}
 --- !u!1 &2035331533
