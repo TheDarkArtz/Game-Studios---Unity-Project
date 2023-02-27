@@ -6,10 +6,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementHandler : MonoBehaviour
 {
-    /*
-    private PlayerInput playerInput;
-    private PlayerControls playerControls;
-    */
+
+    [Header("Animations")]
+    [SerializeField] private Animator _anim;
+    private int currentState;
+
+    private readonly int Idle = Animator.StringToHash("idle2");
+    private readonly int Walk = Animator.StringToHash("walk1");
+    private readonly int Holding = Animator.StringToHash("holding");
+    private readonly int Carry = Animator.StringToHash("carrying ");
 
     [Header("Movement")]
     [SerializeField] private float groundDrag;
@@ -23,6 +28,8 @@ public class MovementHandler : MonoBehaviour
 
     [Header("Ground")]
     [SerializeField] LayerMask isGround;
+
+    private PickUp pickupScript;
 
     private Vector2 movementInput = Vector2.zero;
 
@@ -40,6 +47,7 @@ public class MovementHandler : MonoBehaviour
         
         rb = gameObject.GetComponent<Rigidbody>();
         capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        pickupScript = gameObject.GetComponent<PickUp>();
 
         /*
         playerInput = gameObject.GetComponent<PlayerInput>();
@@ -61,27 +69,12 @@ public class MovementHandler : MonoBehaviour
 
     }
 
-    /*
-    private void onActionTriggered(InputAction.CallbackContext context)
-    {
-        switch (context.action.name)
-        {
-            case "Movement":
-                OnMove(context);
-                break;
-            case "Jump":
-                OnJump(context);
-                break;
-        }
-    }
-    */
-
     // Jump
     public void OnMove(InputAction.CallbackContext context)
     {
         if(context.performed)
         {
-            movementInput = context.ReadValue<Vector2>();
+            movementInput = context.ReadValue<Vector2>();   
         }
     }
     // Jump
@@ -120,6 +113,25 @@ public class MovementHandler : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0.5f;
+
+        int state = GetState();
+        if (state != currentState)
+        {
+            _anim.CrossFade(state, .2f, 0);
+            currentState = state;
+        };
+    }
+
+    private int GetState()
+    {
+        var walking = Walk;
+        var idle = Idle;
+        if (pickupScript.hasPickedup())
+        {
+            walking = Carry;
+            idle = Holding;
+        }
+        return movementInput == Vector2.zero ? idle : walking;
     }
 
     // Update function to actually move the player

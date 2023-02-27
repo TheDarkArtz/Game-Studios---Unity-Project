@@ -1,11 +1,30 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using TMPro;
+
+ [Serializable]
+ public struct materialCounter {
+    public string name;
+    public TMP_Text textAsset;
+ }
 
 public class ScrapCrafting : MonoBehaviour
 {
+    public materialCounter[] counters;
+
+    [SerializeField] private Dictionary<string,TMP_Text> UiCounters = new Dictionary<string, TMP_Text>();
     [SerializeField] private CraftingRecipe recipes;
     private Dictionary<string,int> currentCrafting = new Dictionary<string, int>();
+
+    private void Start() {
+        for(int i = 0; i < counters.Length; i++)
+        {
+            var x = counters[i];
+            UiCounters.Add(x.name,x.textAsset);
+        }
+    }
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Scrap"))
@@ -16,12 +35,21 @@ public class ScrapCrafting : MonoBehaviour
                 currentCrafting.Add(other.name, 0);
             }
 
-            currentCrafting[other.name] += 1;
             Destroy(other.gameObject);
+            currentCrafting[other.name] += 1;
+            
             checkCrafting();
+            updateCounter(other.name);
         }
     }   
 
+    private void updateCounter(string name)
+    {
+        if(UiCounters.TryGetValue(name, out TMP_Text value))
+        {
+            value.text = currentCrafting[name].ToString();
+        }
+    }
     private void checkCrafting()
     {   
         int indexOfItem = 0;
@@ -60,6 +88,7 @@ public class ScrapCrafting : MonoBehaviour
                 {
                     print($"removing, {entry.Key}, {entry.Value}");
                     currentCrafting[entry.Key] -= entry.Value;
+                    updateCounter(entry.Key);
                     //currentCrafting[x.Item[indexOfItem]] -= x.Amount[indexOfItem];
                 }
                 toRemove.Clear();

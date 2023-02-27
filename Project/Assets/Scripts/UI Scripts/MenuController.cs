@@ -18,17 +18,6 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Animator camaraTransistion;
     [SerializeField] private Animator menuTransistion;
 
-
-    /* -- this really needed?
-    [Header("")]
-    [SerializeField] private GameObject[] characters;
-
-    
-    [Range(0, 4)]
-    public int players;
-    public int selectedCharacter = 0;
-    */
-
     private void Awake() 
     {
         // Displays the mouse, but locks it to the game screen.
@@ -37,7 +26,7 @@ public class MenuController : MonoBehaviour
     }
 
     private void Start() {
-        PlayerManager.OnJoined += joined;
+        
     }
 
     public void CharacterSelectMenu()
@@ -53,32 +42,6 @@ public class MenuController : MonoBehaviour
         menuTransistion.SetTrigger("GoToMenu");
         playerInputManager.DisableJoining();
     }
-
-    private void joined()
-    {
-        
-    }
-
-
-    /*
-    public void NextCharacter()
-    {
-        characters[selectedCharacter].SetActive(false);
-        selectedCharacter = (selectedCharacter + 1) % characters.Length;
-        characters[selectedCharacter].SetActive(true);
-    }
-
-    public void PreviousCharacter()
-    {
-        characters[selectedCharacter].SetActive(false);
-        selectedCharacter --;
-        if (selectedCharacter < 0)
-        {
-            selectedCharacter += characters.Length;
-        }
-        characters[selectedCharacter].SetActive(true);
-    }
-    */
 
     //The play game event. Called by the play game button.
     public void PlayGame()
@@ -101,8 +64,5 @@ public class MenuController : MonoBehaviour
         yield return new WaitForSeconds(transistionTime);
 
         SceneManager.LoadScene(levelIndex);
-    }
-    
-
-    
+    }    
 }
