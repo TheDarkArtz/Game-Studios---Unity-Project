@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour
             if(hasPickedUpObject == false)
             {
                 RaycastHit hit;
-                if(Physics.BoxCast(transform.position, transform.lossyScale / 2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+                if(Physics.BoxCast(transform.position, transform.lossyScale/2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
                 {
                     CurrentScapHeld = hit.transform.GetComponent<ScrapMaterial>();
                     if (CurrentScapHeld.pickedUp == false)
@@ -42,7 +42,7 @@ public class PickUp : MonoBehaviour
                         rb.useGravity = false;
 
 
-                        hit.transform.position = transform.position + (transform.forward * maxDistance);
+                        hit.transform.position = transform.position + (transform.forward * maxDistance) + (Vector3.up * .5f);
                         hit.transform.SetParent(transform);
                     }
                 }
@@ -65,10 +65,15 @@ public class PickUp : MonoBehaviour
         }
     }
 
+    public bool hasPickedup()
+    {
+        return hasPickedUpObject;
+    }
+
     void OnDrawGizmos()
     {
         RaycastHit hit;
-        if(Physics.BoxCast(transform.position, transform.lossyScale / 2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+        if(Physics.BoxCast(transform.position, transform.lossyScale/2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
         {
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, transform.forward * hit.distance);
