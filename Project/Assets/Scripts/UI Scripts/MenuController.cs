@@ -52,6 +52,7 @@ public class MenuController : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        numPlayersReady = 0;
         playerInputManager.DisableJoining();
         camaraTransistion.SetTrigger("StartMenu");
         menuTransistion.SetTrigger("GoToMenu");
