@@ -198,6 +198,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""fa0af9b5-5f04-4c6d-a6c9-226f8be73cc2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,7 +249,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""character select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b9b4236c-97b9-4684-948b-ff69c9d61541"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""character select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -251,7 +271,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""character select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""31898993-6154-4669-b559-2288f13ecd6c"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""character select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -303,11 +334,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0067dd3b-cb88-4f03-a423-14f9a951654f"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Ready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88d67f7b-7508-483b-8703-4d45377cc4c5"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aafd83c6-b82a-4814-b516-5516fb347150"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -349,6 +402,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Menu_Start = m_Menu.FindAction("Start", throwIfNotFound: true);
         m_Menu_characterselect = m_Menu.FindAction("character select", throwIfNotFound: true);
         m_Menu_Ready = m_Menu.FindAction("Ready", throwIfNotFound: true);
+        m_Menu_Back = m_Menu.FindAction("Back", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -460,6 +514,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Menu_Start;
     private readonly InputAction m_Menu_characterselect;
     private readonly InputAction m_Menu_Ready;
+    private readonly InputAction m_Menu_Back;
     public struct MenuActions
     {
         private @PlayerControls m_Wrapper;
@@ -467,6 +522,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Start => m_Wrapper.m_Menu_Start;
         public InputAction @characterselect => m_Wrapper.m_Menu_characterselect;
         public InputAction @Ready => m_Wrapper.m_Menu_Ready;
+        public InputAction @Back => m_Wrapper.m_Menu_Back;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -485,6 +541,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Ready.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnReady;
                 @Ready.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnReady;
                 @Ready.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnReady;
+                @Back.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnBack;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -498,6 +557,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Ready.started += instance.OnReady;
                 @Ready.performed += instance.OnReady;
                 @Ready.canceled += instance.OnReady;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
             }
         }
     }
@@ -531,5 +593,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnStart(InputAction.CallbackContext context);
         void OnCharacterselect(InputAction.CallbackContext context);
         void OnReady(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
 }

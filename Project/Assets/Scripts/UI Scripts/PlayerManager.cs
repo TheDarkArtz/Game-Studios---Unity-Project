@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
     public int[] playerCharacterInt = new int[] {0,0,0,0};
     [SerializeField] private Transform[] SpawnLocations;
-    [SerializeField] private int currentAmountOfPlayers = 0;
+
+    [Range(0,4)]
+    public static int currentAmountOfPlayers = 0;
     public GameObject[] characterSelectPanel;
 
     private void Awake() 
@@ -29,11 +30,20 @@ public class PlayerManager : MonoBehaviour
 
     public void OnPlayerLeft()
     {
-
     }
 
     private void UpdateCharacter(int CharacterToChange, int selectedCharacter)
     {
         playerCharacterInt[CharacterToChange] = selectedCharacter;
     }
+
+    //private void OnEnable() 
+   // {
+   //     LoadCharacter.onBack += OnPlayerLeft;
+  //  }
+
+   // private void OnDisable() 
+  //  {
+   //     LoadCharacter.onBack -= OnPlayerLeft;
+   // }
 }

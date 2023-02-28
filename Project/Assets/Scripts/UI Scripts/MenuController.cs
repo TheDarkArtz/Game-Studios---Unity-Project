@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class MenuController : MonoBehaviour
 {
@@ -18,6 +19,16 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Animator camaraTransistion;
     [SerializeField] private Animator menuTransistion;
 
+    [Range(0,4)]
+    private int numPlayersReady = 0;
+    private int currentPlayers;
+
+    public TMPro.TextMeshProUGUI playersReadyText;
+    public TMPro.TextMeshProUGUI currentPlayersText;
+
+
+
+
     private void Awake() 
     {
         // Displays the mouse, but locks it to the game screen.
@@ -25,8 +36,11 @@ public class MenuController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void Start() {
-        
+    private void Update() 
+    {
+        //tidy this up later
+        currentPlayers = PlayerManager.currentAmountOfPlayers;
+        currentPlayersText.text = "" + currentPlayers;
     }
 
     public void CharacterSelectMenu()
@@ -65,4 +79,40 @@ public class MenuController : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
     }    
+
+    private void OnEnable() 
+    {
+        LoadCharacter.onReady += PlayerReady;
+        LoadCharacter.onCancel += PlayerCanceled;
+        LoadCharacter.onBack += BackToMainMenu;
+    }
+
+    private void OnDisable() 
+    {
+        LoadCharacter.onReady -= PlayerReady;
+        LoadCharacter.onCancel -= PlayerCanceled;
+        LoadCharacter.onBack -= BackToMainMenu;
+    }
+
+    void PlayerReady()
+    {
+        numPlayersReady += 1;
+        Debug.Log(numPlayersReady + "Ready");
+        playersReadyText.text = "" + numPlayersReady; 
+
+        if (currentPlayers >= 2)
+        {
+            if (numPlayersReady == currentPlayers)
+            {
+                PlayGame();
+            }
+        }
+    }
+
+    void PlayerCanceled()
+    {
+        numPlayersReady -= 1;
+        playersReadyText.text = "" + numPlayersReady; 
+        Debug.Log(numPlayersReady + "Ready");  
+    }
 }

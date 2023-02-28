@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class LoadCharacter : MonoBehaviour
 {
@@ -14,7 +15,13 @@ public class LoadCharacter : MonoBehaviour
     public int id = 0;
     [SerializeField] private int selectedCharacter = 0;
     
-    private bool Ready = false;
+    public delegate void ReadyAction();
+    public static event ReadyAction onReady;
+    public delegate void CancelAction();
+    public static event CancelAction onCancel;
+    public delegate void BackAction();
+    public static event BackAction onBack;
+    public bool playerReady = false;
 
     private void Start() {
         transform.position = spawnPoint.position;
@@ -23,25 +30,43 @@ public class LoadCharacter : MonoBehaviour
 
     public void SelectCharacter(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (playerReady == false)
         {
-            characters[selectedCharacter].SetActive(false);
-            selectedCharacter += (int) context.ReadValue<float>();
-            if (selectedCharacter < 0)
+            if(context.performed)
             {
-                selectedCharacter += characters.Length;
+                characters[selectedCharacter].SetActive(false);
+                selectedCharacter += (int) context.ReadValue<float>();
+                if (selectedCharacter < 0)
+                {
+                    selectedCharacter += characters.Length;
+                }
+                else if (selectedCharacter > characters.Length - 1)
+                {
+                    selectedCharacter = 0;
+                }
+                characters[selectedCharacter].SetActive(true);
+                OnCharacterChanged?.Invoke(id,selectedCharacter);
             }
-            else if (selectedCharacter > characters.Length - 1)
-            {
-                selectedCharacter = 0;
-            }
-            characters[selectedCharacter].SetActive(true);
-            OnCharacterChanged?.Invoke(id,selectedCharacter);
-        }
+        }  
     }
 
     public void ReadyCharacter(InputAction.CallbackContext context)
     {
-        Ready = true;
+        if (playerReady == false)
+        {
+            onReady?.Invoke();
+            playerReady = true;
+        }
+        else if (playerReady == true)
+        {
+            onCancel?.Invoke();
+            playerReady = false;
+        }
     }
+
+    public void Back(InputAction.CallbackContext context)
+    {
+        onBack?.Invoke();
+    }
+
 }
