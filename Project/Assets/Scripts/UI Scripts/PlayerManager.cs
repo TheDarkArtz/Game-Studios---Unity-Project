@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Transform[] SpawnLocations;
 
     [Range(0,4)]
-    public static int currentAmountOfPlayers = 0;
+    public int currentAmountOfPlayers = 0;
     public GameObject[] characterSelectPanel;
 
     private void Awake() 

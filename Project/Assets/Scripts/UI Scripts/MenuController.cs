@@ -8,6 +8,7 @@ using TMPro;
 public class MenuController : MonoBehaviour
 {
     public PlayerInputManager playerInputManager;
+    private PlayerManager playerManager;
 
     [Header("Scene Crossfade Controls")]
     [SerializeField] private Animator crossFadeTransistion;
@@ -34,12 +35,14 @@ public class MenuController : MonoBehaviour
         // Displays the mouse, but locks it to the game screen.
         Cursor.lockState = CursorLockMode.Confined;
         audioSource = GetComponent<AudioSource>();
+        playerManager = FindObjectOfType<PlayerManager>();
+
     }
 
     private void Update() 
     {
         //tidy this up later
-        currentPlayers = PlayerManager.currentAmountOfPlayers;
+        currentPlayers = playerManager.currentAmountOfPlayers;
         currentPlayersText.text = "" + currentPlayers;
     }
 
@@ -99,7 +102,6 @@ public class MenuController : MonoBehaviour
     void PlayerReady()
     {
         numPlayersReady += 1;
-        Debug.Log(numPlayersReady + "Ready");
         playersReadyText.text = "" + numPlayersReady; 
 
         if (currentPlayers >= 2)
@@ -114,7 +116,6 @@ public class MenuController : MonoBehaviour
     void PlayerCanceled()
     {
         numPlayersReady -= 1;
-        playersReadyText.text = "" + numPlayersReady; 
-        Debug.Log(numPlayersReady + "Ready");  
+        playersReadyText.text = "" + numPlayersReady;  
     }
 }
