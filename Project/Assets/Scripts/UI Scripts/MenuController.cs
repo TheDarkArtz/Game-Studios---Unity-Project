@@ -52,9 +52,10 @@ public class MenuController : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        playerInputManager.DisableJoining();
         camaraTransistion.SetTrigger("StartMenu");
         menuTransistion.SetTrigger("GoToMenu");
-        playerInputManager.DisableJoining();
+        
     }
 
     //The play game event. Called by the play game button.

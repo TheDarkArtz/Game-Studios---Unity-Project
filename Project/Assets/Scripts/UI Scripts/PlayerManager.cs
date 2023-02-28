@@ -30,6 +30,7 @@ public class PlayerManager : MonoBehaviour
 
     public void OnPlayerLeft()
     {
+
     }
 
     private void UpdateCharacter(int CharacterToChange, int selectedCharacter)
@@ -37,13 +38,22 @@ public class PlayerManager : MonoBehaviour
         playerCharacterInt[CharacterToChange] = selectedCharacter;
     }
 
-    //private void OnEnable() 
-   // {
-   //     LoadCharacter.onBack += OnPlayerLeft;
-  //  }
+    private void OnEnable() 
+    {
+        LoadCharacter.onBack += PlayersDeleted;
+    }
 
-   // private void OnDisable() 
-  //  {
-   //     LoadCharacter.onBack -= OnPlayerLeft;
-   // }
+    private void OnDisable() 
+    {
+        LoadCharacter.onBack -= PlayersDeleted;
+    }
+
+    void PlayersDeleted()
+    {
+        currentAmountOfPlayers = 0;
+        for (var i = 0; i < characterSelectPanel.Length; i++)
+        {
+            characterSelectPanel[i].SetActive(true);
+        }
+    }
 }

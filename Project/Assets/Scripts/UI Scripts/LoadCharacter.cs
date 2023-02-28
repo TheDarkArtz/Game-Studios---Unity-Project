@@ -69,4 +69,19 @@ public class LoadCharacter : MonoBehaviour
         onBack?.Invoke();
     }
 
+    void DeletePlayers()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnEnable() 
+    {
+        LoadCharacter.onBack += DeletePlayers;
+    }
+
+    private void OnDisable() 
+    {
+        LoadCharacter.onBack -= DeletePlayers;
+    }
+
 }
