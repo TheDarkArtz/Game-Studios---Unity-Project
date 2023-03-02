@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - UI
-  - Grabbable
-  - Prop
+  - Scrap
+  - CraftedScrap
   layers:
   - Default
   - TransparentFX
@@ -14,12 +14,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
   - Ground
-  - 
+  - Materials
   - 
   - 
   - 

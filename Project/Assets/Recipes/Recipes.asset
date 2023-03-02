@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca507822992d64d984abb72d86330d, type: 3}
+  m_Name: Recipes
+  m_EditorClassIdentifier: 
+  Materials:
+  - Item:
+    - Cog
+    - Tire
+    - Circuit Board
+    Amount: 010000000200000001000000
+  - Item:
+    - Tire
+    - Cog
+    - Circuit Board
+    Amount: 010000000200000001000000
+  - Item:
+    - Tire
+    - Lightbulb
+    - Cog
+    Amount: 010000000200000001000000
+  - Item:
+    - Lightbulb
+    - Circuit Board
+    - Cog
+    Amount: 010000000200000001000000
+  Results:
+  - {fileID: 4138936069491897383, guid: 63250ff352a9c854188611dffede2d43, type: 3}
+  - {fileID: 4138936069491897383, guid: 0729fddb04a7beb48884c27b5a10491e, type: 3}
+  - {fileID: 4138936069491897383, guid: 52b3e1ebdae9f4e4a952a0979e71bed9, type: 3}
+  - {fileID: 4138936069491897383, guid: 012cf06a7acfe3a4ebccb11e909d6acb, type: 3}

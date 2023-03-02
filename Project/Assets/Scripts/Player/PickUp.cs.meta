@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Project/Assets/Scripts/CameraControler.cs.meta
+guid: 4a8a36ef7af662f4185b36ad6e54951d
+========
+guid: 66d7608d5d33d5f48b4eba0e40bb58e1
+>>>>>>>> main:Project/Assets/Player/PickUp.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
