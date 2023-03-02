@@ -34,9 +34,7 @@ public class MenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         audioSource = GetComponent<AudioSource>();
         playerManager = FindObjectOfType<PlayerManager>();
-
     }
-
 
     private void Update() 
     {

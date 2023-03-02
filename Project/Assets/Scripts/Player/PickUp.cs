@@ -7,11 +7,16 @@ public class PickUp : MonoBehaviour
 
     private bool hasPickedUpObject;
     private Transform pickUpObjectTransform;
-    private float maxDistance = .5f;
+    private float maxDistance = .7f;
+    private Vector3 size = new Vector3(.5f,2f,.5f);
 
     ScrapMaterial CurrentScapHeld;
 
     private PlayerControls controls;
+
+    private void Start() {
+        print(transform.lossyScale/2);
+    }
 
     private void Awake() {
         controls = new PlayerControls();
@@ -25,7 +30,7 @@ public class PickUp : MonoBehaviour
             if(hasPickedUpObject == false)
             {
                 RaycastHit hit;
-                if(Physics.BoxCast(transform.position, transform.lossyScale/2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+                if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
                 {
                     CurrentScapHeld = hit.transform.GetComponent<ScrapMaterial>();
                     if (CurrentScapHeld.pickedUp == false)
@@ -73,11 +78,11 @@ public class PickUp : MonoBehaviour
     void OnDrawGizmos()
     {
         RaycastHit hit;
-        if(Physics.BoxCast(transform.position, transform.lossyScale/2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+        if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
         {
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, transform.forward * hit.distance);
-            Gizmos.DrawWireCube(transform.position + (transform.forward * hit.distance), transform.lossyScale);
+            Gizmos.DrawWireCube(transform.position + (transform.forward * hit.distance), size);
         }
         else
         {

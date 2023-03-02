@@ -12,6 +12,7 @@ using TMPro;
 
 public class ScrapCrafting : MonoBehaviour
 {
+    public Transform spawnLocation;
     public materialCounter[] counters;
 
     [SerializeField] private Dictionary<string,TMP_Text> UiCounters = new Dictionary<string, TMP_Text>();
@@ -102,6 +103,8 @@ public class ScrapCrafting : MonoBehaviour
 
     private void makeItem(GameObject CraftedItem)
     {
-        Instantiate(CraftedItem, transform.position, Quaternion.identity);
+        GameObject spawnedThing = Instantiate(CraftedItem, spawnLocation.position, Quaternion.identity);
+        spawnedThing.GetComponent<Rigidbody>().AddForce(spawnLocation.forward * 10, ForceMode.Impulse);
+
     }
 }
