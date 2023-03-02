@@ -8,10 +8,17 @@ public class PlayerManager : MonoBehaviour
 {
     public int[] playerCharacterInt = new int[] {0,0,0,0};
     [SerializeField] private Transform[] SpawnLocations;
-    [SerializeField] private int currentAmountOfPlayers = 0;
+
+    [Range(0,4)]
+    public int currentAmountOfPlayers = 0;
     public GameObject[] characterSelectPanel;
 
+<<<<<<< HEAD
     public List<InputDevice> devices = new List<InputDevice>();
+=======
+    public int[] playerId = new int[] {0,0,0,0};
+
+>>>>>>> origin/Jack
 
     private void Awake() 
     {
@@ -25,7 +32,15 @@ public class PlayerManager : MonoBehaviour
         script.spawnPoint = SpawnLocations[input.playerIndex];
         script.OnCharacterChanged += UpdateCharacter;
 
+<<<<<<< HEAD
         devices.Add(input.devices[0]);
+=======
+        //playerId[currentAmountOfPlayers] = input.playerIndex;
+
+        var device = input.devices[0];
+
+        Debug.Log(device);
+>>>>>>> origin/Jack
 
         currentAmountOfPlayers++;
         characterSelectPanel[currentAmountOfPlayers - 1].SetActive(false);
@@ -33,9 +48,10 @@ public class PlayerManager : MonoBehaviour
 
     public void OnPlayerLeft()
     {
-
+        
     }
 
+<<<<<<< HEAD
     [ContextMenu("Do Something")]
     public void stuff()
     {
@@ -44,9 +60,30 @@ public class PlayerManager : MonoBehaviour
             print(x);
         }
     }
+=======
+>>>>>>> origin/Jack
 
     private void UpdateCharacter(int CharacterToChange, int selectedCharacter)
     {
         playerCharacterInt[CharacterToChange] = selectedCharacter;
+    }
+
+    private void OnEnable() 
+    {
+        LoadCharacter.onBack += PlayersDeleted;
+    }
+
+    private void OnDisable() 
+    {
+        LoadCharacter.onBack -= PlayersDeleted;
+    }
+
+    void PlayersDeleted()
+    {
+        currentAmountOfPlayers = 0;
+        for (var i = 0; i < characterSelectPanel.Length; i++)
+        {
+            characterSelectPanel[i].SetActive(true);
+        }
     }
 }

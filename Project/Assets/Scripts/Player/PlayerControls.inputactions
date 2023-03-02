@@ -176,6 +176,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "fa0af9b5-5f04-4c6d-a6c9-226f8be73cc2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -218,7 +227,18 @@
                     "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
+                    "action": "character select",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "b9b4236c-97b9-4684-948b-ff69c9d61541",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "character select",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -229,7 +249,18 @@
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
+                    "action": "character select",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "31898993-6154-4669-b559-2288f13ecd6c",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "character select",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -274,6 +305,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
+<<<<<<< HEAD:Project/Assets/Player/PlayerControls.inputactions
                     "action": "Ready",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -285,7 +317,42 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+=======
+>>>>>>> origin/Jack:Project/Assets/Scripts/Player/PlayerControls.inputactions
                     "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0067dd3b-cb88-4f03-a423-14f9a951654f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88d67f7b-7508-483b-8703-4d45377cc4c5",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aafd83c6-b82a-4814-b516-5516fb347150",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

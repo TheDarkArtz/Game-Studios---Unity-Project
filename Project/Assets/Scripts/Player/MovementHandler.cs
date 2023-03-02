@@ -8,7 +8,11 @@ public class MovementHandler : MonoBehaviour
 {
 
     [Header("Animations")]
+<<<<<<< HEAD:Project/Assets/Player/MovementHandler.cs
     [SerializeField] private Animator _anim;
+=======
+    [SerializeField] private Animator[] _anim;
+>>>>>>> origin/Jack:Project/Assets/Scripts/Player/MovementHandler.cs
     private int currentState;
 
     private readonly int Idle = Animator.StringToHash("idle2");
@@ -42,6 +46,11 @@ public class MovementHandler : MonoBehaviour
     private float currentMovmentMultiplier;
     private float lerp;
 
+    [SerializeField] private GameObject[] characters;
+    public int selectedCharacter = 0;
+    public Transform spawnPoint;
+    public int id = 0;
+
     private void Awake(){
         //playerControls = new PlayerControls();
         
@@ -59,6 +68,9 @@ public class MovementHandler : MonoBehaviour
     private void Start() {
         currentMovmentMultiplier = movementMultiplier;
         rb.drag = groundDrag;
+        transform.position = spawnPoint.position;
+        transform.rotation = spawnPoint.rotation;
+        characters[selectedCharacter].SetActive(true);
     }
 
     // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
@@ -117,7 +129,11 @@ public class MovementHandler : MonoBehaviour
         int state = GetState();
         if (state != currentState)
         {
+<<<<<<< HEAD:Project/Assets/Player/MovementHandler.cs
             _anim.CrossFade(state, .2f, 0);
+=======
+            _anim[selectedCharacter].CrossFade(state, .2f, 0);
+>>>>>>> origin/Jack:Project/Assets/Scripts/Player/MovementHandler.cs
             currentState = state;
         };
     }
