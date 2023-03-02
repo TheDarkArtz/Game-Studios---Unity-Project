@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private int currentAmountOfPlayers = 0;
     public GameObject[] characterSelectPanel;
 
+    public List<InputDevice> devices = new List<InputDevice>();
+
     private void Awake() 
     {
         DontDestroyOnLoad(this);
@@ -23,6 +25,8 @@ public class PlayerManager : MonoBehaviour
         script.spawnPoint = SpawnLocations[input.playerIndex];
         script.OnCharacterChanged += UpdateCharacter;
 
+        devices.Add(input.devices[0]);
+
         currentAmountOfPlayers++;
         characterSelectPanel[currentAmountOfPlayers - 1].SetActive(false);
     }
@@ -30,6 +34,15 @@ public class PlayerManager : MonoBehaviour
     public void OnPlayerLeft()
     {
 
+    }
+
+    [ContextMenu("Do Something")]
+    public void stuff()
+    {
+        foreach(var x in devices)
+        {
+            print(x);
+        }
     }
 
     private void UpdateCharacter(int CharacterToChange, int selectedCharacter)

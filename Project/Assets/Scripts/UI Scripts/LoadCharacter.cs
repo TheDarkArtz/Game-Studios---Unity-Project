@@ -13,7 +13,7 @@ public class LoadCharacter : MonoBehaviour
     public Transform spawnPoint;
     public int id = 0;
     [SerializeField] private int selectedCharacter = 0;
-    
+
     private bool Ready = false;
 
     private void Start() {
