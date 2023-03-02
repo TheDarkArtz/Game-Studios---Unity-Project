@@ -15,7 +15,7 @@ public class ScrapMaterial : MonoBehaviour
     
     void Start()
     {
-        coundDown = Random.Range(5f,15f);
+        coundDown = Random.Range(20f,30f);
         timeCreated = Time.time;
 
         Invoke(nameof(DestroyGameObject), coundDown);
