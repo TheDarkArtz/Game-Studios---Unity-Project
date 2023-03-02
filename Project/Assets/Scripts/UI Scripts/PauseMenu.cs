@@ -17,12 +17,14 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private float transistionTime = 2;
     [SerializeField] private Animator musicFadeTransistion;
     private AudioSource audioSource;
+    private PlayerManager playerManager;
 
     private void Awake() 
     {
         controls = new PlayerControls();
         controls.Menu.Start.performed += ctx => Pause();
         Cursor.lockState = CursorLockMode.Locked;
+        playerManager = FindObjectOfType<PlayerManager>();
     }
 
     public void Resume()
@@ -68,6 +70,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         AudioListener.pause = false;
         StartCoroutine(LoadLevel(0));
+        Destroy(playerManager.gameObject);
     }
 
     public void QuitGame()

@@ -11,9 +11,11 @@ public class EndGameMenu : MonoBehaviour
     [SerializeField] private float transistionTime = 2;
     [SerializeField] private Animator musicFadeTransistion;
     private AudioSource audioSource;
+    private PlayerManager playerManager;
     private void Awake() 
     {
         Cursor.lockState = CursorLockMode.Confined;
+        playerManager = FindObjectOfType<PlayerManager>();
     }
     public void PlayAgain()
     {
@@ -23,6 +25,7 @@ public class EndGameMenu : MonoBehaviour
     public void MainMenu()
     {
         StartCoroutine(LoadLevel(0));
+        Destroy(playerManager.gameObject);
     }
 
     IEnumerator LoadLevel(int levelIndex)

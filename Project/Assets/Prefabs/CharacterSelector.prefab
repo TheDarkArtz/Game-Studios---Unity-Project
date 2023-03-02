@@ -235,6 +235,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -1155148998700280648, guid: 8d717cb9d38564f41b352dd9cf4d5939,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 741808593568725213, guid: 8d717cb9d38564f41b352dd9cf4d5939,
         type: 3}
       propertyPath: m_Layer
@@ -476,6 +481,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7603786706384944740, guid: b1e89da3c1c44e5409cb94ce0adb223d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7684607853508971323, guid: b1e89da3c1c44e5409cb94ce0adb223d,
         type: 3}
       propertyPath: m_Layer
@@ -586,6 +596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5985711725831583983, guid: b7eada08e39c74c42b94f483b833003d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5176893153406736337, guid: b7eada08e39c74c42b94f483b833003d,
         type: 3}
@@ -782,6 +797,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4202798675411607032, guid: 6b2a80d6315384345b04519a379b3b17,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -1599826595754709761, guid: 6b2a80d6315384345b04519a379b3b17,
         type: 3}
