@@ -552,15 +552,9 @@ RectTransform:
   m_Father: {fileID: 1339191850}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-=======
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 380, y: 0}
->>>>>>> origin/Jack
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306782296
@@ -1449,15 +1443,9 @@ RectTransform:
   m_Father: {fileID: 1339191850}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-=======
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 270, y: 0}
->>>>>>> origin/Jack
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531423040
@@ -1752,8 +1740,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685251795}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &717326987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1802,6 @@ Transform:
   m_Father: {fileID: 272838413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -145.06, z: 0}
->>>>>>> origin/Jack
 --- !u!1 &735956139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,15 +2257,9 @@ RectTransform:
   m_Father: {fileID: 1339191850}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-=======
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50, y: 0}
->>>>>>> origin/Jack
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914235129
@@ -3049,15 +3028,9 @@ RectTransform:
   m_Father: {fileID: 1339191850}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-=======
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 160, y: 0}
->>>>>>> origin/Jack
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1353987940
@@ -4071,8 +4044,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835980956}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &1841647874
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,7 +4075,6 @@ Transform:
   m_Father: {fileID: 272838413}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
->>>>>>> origin/Jack
 --- !u!1 &1926886961
 GameObject:
   m_ObjectHideFlags: 0
