@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -12,13 +11,8 @@ public class PlayerManager : MonoBehaviour
     [Range(0,4)]
     public int currentAmountOfPlayers = 0;
     public GameObject[] characterSelectPanel;
+    public InputDevice[] device = new InputDevice[] {null,null,null,null};
 
-<<<<<<< HEAD
-    public List<InputDevice> devices = new List<InputDevice>();
-=======
-    public int[] playerId = new int[] {0,0,0,0};
-
->>>>>>> origin/Jack
 
     private void Awake() 
     {
@@ -32,15 +26,7 @@ public class PlayerManager : MonoBehaviour
         script.spawnPoint = SpawnLocations[input.playerIndex];
         script.OnCharacterChanged += UpdateCharacter;
 
-<<<<<<< HEAD
-        devices.Add(input.devices[0]);
-=======
-        //playerId[currentAmountOfPlayers] = input.playerIndex;
-
-        var device = input.devices[0];
-
-        Debug.Log(device);
->>>>>>> origin/Jack
+        device[currentAmountOfPlayers] = input.devices[0];
 
         currentAmountOfPlayers++;
         characterSelectPanel[currentAmountOfPlayers - 1].SetActive(false);
@@ -51,17 +37,6 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-<<<<<<< HEAD
-    [ContextMenu("Do Something")]
-    public void stuff()
-    {
-        foreach(var x in devices)
-        {
-            print(x);
-        }
-    }
-=======
->>>>>>> origin/Jack
 
     private void UpdateCharacter(int CharacterToChange, int selectedCharacter)
     {
