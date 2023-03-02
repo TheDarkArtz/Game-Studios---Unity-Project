@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System;
 using TMPro;
 
- [Serializable]
- public struct materialCounter {
+[Serializable]
+public struct materialCounter {
     public string name;
     public TMP_Text textAsset;
- }
+}
 
 public class ScrapCrafting : MonoBehaviour
 {
