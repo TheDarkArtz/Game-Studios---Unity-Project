@@ -14,10 +14,6 @@ public class LoadCharacter : MonoBehaviour
     public Transform spawnPoint;
     public int id = 0;
     [SerializeField] private int selectedCharacter = 0;
-<<<<<<< HEAD
-
-    private bool Ready = false;
-=======
     
     public delegate void ReadyAction();
     public static event ReadyAction onReady;
@@ -26,7 +22,6 @@ public class LoadCharacter : MonoBehaviour
     public delegate void BackAction();
     public static event BackAction onBack;
     public bool playerReady = false;
->>>>>>> origin/Jack
 
     private void Start() {
         transform.position = spawnPoint.position;
@@ -57,10 +52,6 @@ public class LoadCharacter : MonoBehaviour
 
     public void ReadyCharacter(InputAction.CallbackContext context)
     {
-<<<<<<< HEAD
-        Ready = true;
-    }
-=======
         if (playerReady == false)
         {
             onReady?.Invoke();
@@ -93,5 +84,4 @@ public class LoadCharacter : MonoBehaviour
         LoadCharacter.onBack -= DeletePlayers;
     }
 
->>>>>>> origin/Jack
 }

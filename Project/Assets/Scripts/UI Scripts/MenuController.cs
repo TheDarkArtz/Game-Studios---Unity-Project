@@ -20,8 +20,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Animator camaraTransistion;
     [SerializeField] private Animator menuTransistion;
 
-<<<<<<< HEAD
-=======
+
     [Range(0,4)]
     private int numPlayersReady = 0;
     private int currentPlayers;
@@ -29,10 +28,6 @@ public class MenuController : MonoBehaviour
     public TMPro.TextMeshProUGUI playersReadyText;
     public TMPro.TextMeshProUGUI currentPlayersText;
 
-
-
-
->>>>>>> origin/Jack
     private void Awake() 
     {
         // Displays the mouse, but locks it to the game screen.
@@ -42,16 +37,12 @@ public class MenuController : MonoBehaviour
 
     }
 
-<<<<<<< HEAD
-    private void Start() {
-        
-=======
+
     private void Update() 
     {
         //tidy this up later
         currentPlayers = playerManager.currentAmountOfPlayers;
         currentPlayersText.text = "" + currentPlayers;
->>>>>>> origin/Jack
     }
 
     public void CharacterSelectMenu()
@@ -67,11 +58,6 @@ public class MenuController : MonoBehaviour
         playerInputManager.DisableJoining();
         camaraTransistion.SetTrigger("StartMenu");
         menuTransistion.SetTrigger("GoToMenu");
-<<<<<<< HEAD
-        playerInputManager.DisableJoining();
-=======
-        
->>>>>>> origin/Jack
     }
 
     //The play game event. Called by the play game button.
@@ -96,8 +82,6 @@ public class MenuController : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
     }    
-<<<<<<< HEAD
-=======
 
     private void OnEnable() 
     {
@@ -132,5 +116,4 @@ public class MenuController : MonoBehaviour
         numPlayersReady -= 1;
         playersReadyText.text = "" + numPlayersReady;  
     }
->>>>>>> origin/Jack
 }

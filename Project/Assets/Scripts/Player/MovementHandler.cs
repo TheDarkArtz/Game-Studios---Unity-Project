@@ -8,11 +8,7 @@ public class MovementHandler : MonoBehaviour
 {
 
     [Header("Animations")]
-<<<<<<< HEAD:Project/Assets/Player/MovementHandler.cs
-    [SerializeField] private Animator _anim;
-=======
     [SerializeField] private Animator[] _anim;
->>>>>>> origin/Jack:Project/Assets/Scripts/Player/MovementHandler.cs
     private int currentState;
 
     private readonly int Idle = Animator.StringToHash("idle2");
@@ -129,11 +125,7 @@ public class MovementHandler : MonoBehaviour
         int state = GetState();
         if (state != currentState)
         {
-<<<<<<< HEAD:Project/Assets/Player/MovementHandler.cs
-            _anim.CrossFade(state, .2f, 0);
-=======
             _anim[selectedCharacter].CrossFade(state, .2f, 0);
->>>>>>> origin/Jack:Project/Assets/Scripts/Player/MovementHandler.cs
             currentState = state;
         };
     }
