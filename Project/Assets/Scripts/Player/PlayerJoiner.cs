@@ -27,5 +27,6 @@ public class PlayerJoiner : MonoBehaviour
         player.id = playerInput.playerIndex;
         player.spawnPoint = SpawnLocations[playerInput.playerIndex];
         player.selectedCharacter = playerManager.playerCharacterInt[playerInput.playerIndex];
+
     }
 }
