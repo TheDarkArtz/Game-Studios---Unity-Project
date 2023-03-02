@@ -101,10 +101,14 @@ public class PauseMenu : MonoBehaviour
     private void OnEnable() 
     {
         controls.Menu.Enable();
+        Timer.OnTimeEnded += DebugNextScene;
     }
 
     private void OnDisable() 
     {
         controls.Menu.Disable();
+        Timer.OnTimeEnded -= DebugNextScene;
     }
+
+
 }
