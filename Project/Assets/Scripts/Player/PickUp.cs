@@ -7,15 +7,31 @@ public class PickUp : MonoBehaviour
 
     private bool hasPickedUpObject;
     private Transform pickUpObjectTransform;
-    private float maxDistance = .5f;
+    private float maxDistance = .6f;
+    private Vector3 size = new Vector3(.5f,2f,.5f);
+
+    private UIFaceCamera lastUI;
 
     ScrapMaterial CurrentScapHeld;
 
     private PlayerControls controls;
-
+    
     private void Awake() {
         controls = new PlayerControls();
         controls.Menu.Start.performed += ctx => PickUpObject(ctx);
+    }
+
+    private void Update() {
+        RaycastHit hit;
+        if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+        {
+            lastUI = hit.transform.GetChild(1).GetComponent<UIFaceCamera>();
+            lastUI.show(true);
+        }
+        else if (lastUI != null)
+        {
+            lastUI.show(false);
+        }
     }
 
     public void PickUpObject(InputAction.CallbackContext context)
@@ -25,7 +41,7 @@ public class PickUp : MonoBehaviour
             if(hasPickedUpObject == false)
             {
                 RaycastHit hit;
-                if(Physics.BoxCast(transform.position, transform.lossyScale/2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+                if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
                 {
                     CurrentScapHeld = hit.transform.GetComponent<ScrapMaterial>();
                     if (CurrentScapHeld.pickedUp == false)
@@ -73,11 +89,11 @@ public class PickUp : MonoBehaviour
     void OnDrawGizmos()
     {
         RaycastHit hit;
-        if(Physics.BoxCast(transform.position, transform.lossyScale/2, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+        if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
         {
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, transform.forward * hit.distance);
-            Gizmos.DrawWireCube(transform.position + (transform.forward * hit.distance), transform.lossyScale);
+            Gizmos.DrawWireCube(transform.position + (transform.forward * hit.distance), size);
         }
         else
         {

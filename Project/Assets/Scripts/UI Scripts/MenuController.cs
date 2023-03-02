@@ -20,6 +20,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Animator camaraTransistion;
     [SerializeField] private Animator menuTransistion;
 
+
     [Range(0,4)]
     private int numPlayersReady = 0;
     private int currentPlayers;
@@ -27,16 +28,12 @@ public class MenuController : MonoBehaviour
     public TMPro.TextMeshProUGUI playersReadyText;
     public TMPro.TextMeshProUGUI currentPlayersText;
 
-
-
-
     private void Awake() 
     {
         // Displays the mouse, but locks it to the game screen.
         Cursor.lockState = CursorLockMode.Confined;
         audioSource = GetComponent<AudioSource>();
         playerManager = FindObjectOfType<PlayerManager>();
-
     }
 
     private void Update() 
@@ -59,7 +56,6 @@ public class MenuController : MonoBehaviour
         playerInputManager.DisableJoining();
         camaraTransistion.SetTrigger("StartMenu");
         menuTransistion.SetTrigger("GoToMenu");
-        
     }
 
     //The play game event. Called by the play game button.

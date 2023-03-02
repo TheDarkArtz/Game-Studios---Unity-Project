@@ -15,6 +15,7 @@ public class MovementHandler : MonoBehaviour
     private readonly int Walk = Animator.StringToHash("walk1");
     private readonly int Holding = Animator.StringToHash("holding");
     private readonly int Carry = Animator.StringToHash("carrying ");
+    private readonly int Hop = Animator.StringToHash("hop");
 
     [Header("Movement")]
     [SerializeField] private float groundDrag;
@@ -46,6 +47,8 @@ public class MovementHandler : MonoBehaviour
     public int selectedCharacter = 0;
     public Transform spawnPoint;
     public int id = 0;
+    public Material[] thisPlayersMaterial;
+    private Renderer rend;
 
     private void Awake(){
         //playerControls = new PlayerControls();
@@ -67,6 +70,8 @@ public class MovementHandler : MonoBehaviour
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
         characters[selectedCharacter].SetActive(true);
+        rend = GetComponentInChildren<Renderer>();
+        rend.material = thisPlayersMaterial[selectedCharacter];
     }
 
     // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
@@ -94,7 +99,7 @@ public class MovementHandler : MonoBehaviour
             
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
+            
             StartCoroutine(ResetJump());
         }
     }
@@ -134,11 +139,18 @@ public class MovementHandler : MonoBehaviour
     {
         var walking = Walk;
         var idle = Idle;
+
         if (pickupScript.hasPickedup())
         {
             walking = Carry;
             idle = Holding;
         }
+
+        if (canJump == false)
+        {
+            return Hop;
+        }
+
         return movementInput == Vector2.zero ? idle : walking;
     }
 

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Project/Assets/Prefabs/Scraps/FBX.meta
 guid: f8da1e05207a58d4c8d1e4f7123de5a9
 folderAsset: yes
 DefaultImporter:
+========
+guid: 6347fe398e5b75e4cacd53256a35d4fc
+PrefabImporter:
+>>>>>>>> 1252b2d465bb000424397776bfce2cf851f3954b:Project/Assets/Prefabs/Scraps/Lightbulb.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

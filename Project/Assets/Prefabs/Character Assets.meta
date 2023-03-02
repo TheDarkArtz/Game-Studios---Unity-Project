@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Project/Assets/Prefabs/Character Assets.meta
 guid: ea811a3095d36034b8bdfb4801deba18
+========
+guid: 2cb627283c1bed04ea5fafbb7ba5d2eb
+>>>>>>>> origin/Jack:Project/Assets/Prefabs/Player Prefabs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

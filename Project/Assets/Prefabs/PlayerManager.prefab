@@ -44,11 +44,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc5a37cdf46ad446ac31232306f01b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  load1Character: {fileID: 0}
-  load2Character: {fileID: 0}
-  load3Character: {fileID: 0}
-  load4Character: {fileID: 0}
-  player1CharacterInt: 0
-  player2CharacterInt: 0
-  player3CharacterInt: 0
-  player4CharacterInt: 0
+  playerCharacterInt: 00000000000000000000000000000000
+  SpawnLocations: []
+  currentAmountOfPlayers: 0
+  characterSelectPanel: []
+  playerOneMaterials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerTwoMaterials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerThreeMaterials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerFourMaterials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

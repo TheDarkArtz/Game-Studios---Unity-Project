@@ -34,7 +34,7 @@ MonoBehaviour:
     - Cog
     Amount: 010000000200000001000000
   Results:
-  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
-  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
-  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
-  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
+  - {fileID: 4138936069491897383, guid: 63250ff352a9c854188611dffede2d43, type: 3}
+  - {fileID: 4138936069491897383, guid: 0729fddb04a7beb48884c27b5a10491e, type: 3}
+  - {fileID: 4138936069491897383, guid: 52b3e1ebdae9f4e4a952a0979e71bed9, type: 3}
+  - {fileID: 4138936069491897383, guid: 012cf06a7acfe3a4ebccb11e909d6acb, type: 3}

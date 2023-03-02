@@ -2,9 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
+[Serializable]
+    public struct materialChanger
+    {
+        public Material[] mat;
+    }
 public class PlayerManager : MonoBehaviour
 {
+    public materialChanger[] allMaterials;
+    
     public int[] playerCharacterInt = new int[] {0,0,0,0};
     [SerializeField] private Transform[] SpawnLocations;
 
@@ -12,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     public int currentAmountOfPlayers = 0;
     public GameObject[] characterSelectPanel;
     public InputDevice[] device = new InputDevice[] {null,null,null,null};
+
 
 
     private void Awake() 
@@ -25,6 +34,7 @@ public class PlayerManager : MonoBehaviour
         script.id = input.playerIndex;
         script.spawnPoint = SpawnLocations[input.playerIndex];
         script.OnCharacterChanged += UpdateCharacter;
+        script.thisPlayersMaterial = allMaterials[currentAmountOfPlayers].mat;
 
         device[currentAmountOfPlayers] = input.devices[0];
 
