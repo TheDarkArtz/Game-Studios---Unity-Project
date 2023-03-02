@@ -11,8 +11,7 @@ public class PlayerManager : MonoBehaviour
     [Range(0,4)]
     public int currentAmountOfPlayers = 0;
     public GameObject[] characterSelectPanel;
-
-    public int[] playerId = new int[] {0,0,0,0};
+    public InputDevice[] device = new InputDevice[] {null,null,null,null};
 
 
     private void Awake() 
@@ -27,11 +26,7 @@ public class PlayerManager : MonoBehaviour
         script.spawnPoint = SpawnLocations[input.playerIndex];
         script.OnCharacterChanged += UpdateCharacter;
 
-        //playerId[currentAmountOfPlayers] = input.playerIndex;
-
-        var device = input.devices[0];
-
-        Debug.Log(device);
+        device[currentAmountOfPlayers] = input.devices[0];
 
         currentAmountOfPlayers++;
         characterSelectPanel[currentAmountOfPlayers - 1].SetActive(false);
