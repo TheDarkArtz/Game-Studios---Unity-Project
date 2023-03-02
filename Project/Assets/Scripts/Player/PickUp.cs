@@ -7,20 +7,31 @@ public class PickUp : MonoBehaviour
 
     private bool hasPickedUpObject;
     private Transform pickUpObjectTransform;
-    private float maxDistance = .7f;
+    private float maxDistance = .6f;
     private Vector3 size = new Vector3(.5f,2f,.5f);
+
+    private UIFaceCamera lastUI;
 
     ScrapMaterial CurrentScapHeld;
 
     private PlayerControls controls;
-
-    private void Start() {
-        print(transform.lossyScale/2);
-    }
-
+    
     private void Awake() {
         controls = new PlayerControls();
         controls.Menu.Start.performed += ctx => PickUpObject(ctx);
+    }
+
+    private void Update() {
+        RaycastHit hit;
+        if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
+        {
+            lastUI = hit.transform.GetChild(1).GetComponent<UIFaceCamera>();
+            lastUI.show(true);
+        }
+        else if (lastUI != null)
+        {
+            lastUI.show(false);
+        }
     }
 
     public void PickUpObject(InputAction.CallbackContext context)
