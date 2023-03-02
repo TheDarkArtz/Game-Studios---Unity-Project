@@ -16,7 +16,7 @@ public class PlayerJoiner : MonoBehaviour
 
         for (var i = 0; i < playerAmount; i++)
         {
-            playerInputManager.JoinPlayer(i);
+            playerInputManager.JoinPlayer(i,-1,null,pairWithDevice: Gamepad.all[i]);
         }
 
     }
