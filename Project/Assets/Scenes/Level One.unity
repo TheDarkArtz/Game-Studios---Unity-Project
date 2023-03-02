@@ -1497,7 +1497,7 @@ GameObject:
   - component: {fileID: 544444232}
   - component: {fileID: 544444236}
   m_Layer: 0
-  m_Name: Seller
+  m_Name: Crafter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3188,7 +3188,6 @@ MonoBehaviour:
   - {fileID: 332101381}
   - {fileID: 717326988}
   - {fileID: 1841647875}
-  playerManager: {fileID: 0}
 --- !u!1 &1563704727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,10 +3407,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   prefabs:
-  - {fileID: 6545788825131172856, guid: ebe14543992fbfa4687e79a633a2754a, type: 3}
-  - {fileID: 9010522615930349062, guid: d4e1bd1d2541a554c8f67acec42312b0, type: 3}
-  - {fileID: 2228895225573710336, guid: 14ec1063ce1e4fa45b1dbda044587945, type: 3}
-  - {fileID: 163682381210412255, guid: e6462a04b6cd77d42a964539693c6f9e, type: 3}
+  - {fileID: 4138936069491897383, guid: b83d5ed7be2163a47ba6a1b93f1816ca, type: 3}
+  - {fileID: 4138936069491897383, guid: 77f985b60cde9894ba2f23ec1d1a0cfb, type: 3}
 --- !u!4 &1572238041
 Transform:
   m_ObjectHideFlags: 0

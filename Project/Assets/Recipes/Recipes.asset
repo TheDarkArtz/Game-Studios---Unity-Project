@@ -15,6 +15,26 @@ MonoBehaviour:
   Materials:
   - Item:
     - Cog
-    Amount: 02000000
+    - Tire
+    - Circuit Board
+    Amount: 010000000200000001000000
+  - Item:
+    - Tire
+    - Cog
+    - Circuit Board
+    Amount: 010000000200000001000000
+  - Item:
+    - Tire
+    - Lightbulb
+    - Cog
+    Amount: 010000000200000001000000
+  - Item:
+    - Lightbulb
+    - Circuit Board
+    - Cog
+    Amount: 010000000200000001000000
   Results:
+  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
+  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
+  - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
   - {fileID: 9010522615930349062, guid: 8846697a40af0ff4da297ef6f1df755f, type: 3}
