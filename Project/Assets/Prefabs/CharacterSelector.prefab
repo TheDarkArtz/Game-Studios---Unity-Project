@@ -57,6 +57,11 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   id: 0
   selectedCharacter: 0
+  thisPlayersMaterial:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerReady: 0
 --- !u!114 &-4342918290780014501
 MonoBehaviour:

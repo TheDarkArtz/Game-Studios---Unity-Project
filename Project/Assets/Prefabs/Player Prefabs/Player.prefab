@@ -251,6 +251,11 @@ MonoBehaviour:
   selectedCharacter: 0
   spawnPoint: {fileID: 0}
   id: 0
+  thisPlayersMaterial:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8587031162106697253
 MonoBehaviour:
   m_ObjectHideFlags: 0
