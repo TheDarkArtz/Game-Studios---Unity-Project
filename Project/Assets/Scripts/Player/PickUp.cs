@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour
         RaycastHit hit;
         if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
         {
-            lastUI = hit.transform.GetChild(1).GetComponent<UIFaceCamera>();
+            lastUI = hit.transform.GetChild(hit.transform.childCount - 1).GetComponent<UIFaceCamera>();
             lastUI.show(true);
         }
         else if (lastUI != null)
@@ -46,6 +46,7 @@ public class PickUp : MonoBehaviour
                     CurrentScapHeld = hit.transform.GetComponent<ScrapMaterial>();
                     if (CurrentScapHeld.pickedUp == false)
                     {
+                        lastUI.show(false);
                         hasPickedUpObject = true;
                         pickUpObjectTransform = hit.transform;
 

@@ -10,9 +10,9 @@ public class ScrapMaterial : MonoBehaviour
     public int moneyValue;
 
     public bool pickedUp { get; private set; } = false;
-    private float coundDown;
-    private float timeCreated;
-    
+    public float coundDown { get; private set; }
+    public float timeCreated { get; private set; }
+
     void Start()
     {
         coundDown = Random.Range(20f,30f);
