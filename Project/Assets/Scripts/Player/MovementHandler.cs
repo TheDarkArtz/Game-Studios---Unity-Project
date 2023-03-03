@@ -49,6 +49,7 @@ public class MovementHandler : MonoBehaviour
     public int id = 0;
     public Material[] thisPlayersMaterial;
     private Renderer rend;
+    public PlayerManager playerManager;
 
     private void Awake(){
         //playerControls = new PlayerControls();
@@ -56,6 +57,7 @@ public class MovementHandler : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
         pickupScript = gameObject.GetComponent<PickUp>();
+        playerManager = FindObjectOfType<PlayerManager>();
 
         /*
         playerInput = gameObject.GetComponent<PlayerInput>();
@@ -70,8 +72,9 @@ public class MovementHandler : MonoBehaviour
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
         characters[selectedCharacter].SetActive(true);
+
         rend = GetComponentInChildren<Renderer>();
-        rend.material = thisPlayersMaterial[selectedCharacter];
+        rend.material = thisPlayersMaterial[playerManager.currentAmountOfPlayers];
     }
 
     // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
