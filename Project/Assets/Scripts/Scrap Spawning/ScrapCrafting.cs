@@ -104,7 +104,7 @@ public class ScrapCrafting : MonoBehaviour
     private void makeItem(GameObject CraftedItem)
     {
         GameObject spawnedThing = Instantiate(CraftedItem, spawnLocation.position, Quaternion.identity);
-        spawnedThing.GetComponent<Rigidbody>().AddForce(spawnLocation.forward * 10, ForceMode.Impulse);
+        spawnedThing.GetComponent<Rigidbody>().AddForce(spawnLocation.forward * 15, ForceMode.Impulse);
 
     }
 }
