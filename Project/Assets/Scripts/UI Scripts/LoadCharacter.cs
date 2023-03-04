@@ -14,6 +14,8 @@ public class LoadCharacter : MonoBehaviour
     public Transform spawnPoint;
     public int id = 0;
     [SerializeField] private int selectedCharacter = 0;
+    public Material[] thisPlayersMaterial;
+    private Renderer rend;
     
     public delegate void ReadyAction();
     public static event ReadyAction onReady;
@@ -22,10 +24,14 @@ public class LoadCharacter : MonoBehaviour
     public delegate void BackAction();
     public static event BackAction onBack;
     public bool playerReady = false;
+    
 
-    private void Start() {
+    private void Start() 
+    {
         transform.position = spawnPoint.position;
         characters[selectedCharacter].SetActive(true);
+        rend = GetComponentInChildren<Renderer>();
+        rend.material = thisPlayersMaterial[selectedCharacter];
     }
 
     public void SelectCharacter(InputAction.CallbackContext context)
@@ -45,6 +51,8 @@ public class LoadCharacter : MonoBehaviour
                     selectedCharacter = 0;
                 }
                 characters[selectedCharacter].SetActive(true);
+                rend = GetComponentInChildren<Renderer>();
+                rend.material = thisPlayersMaterial[selectedCharacter];
                 OnCharacterChanged?.Invoke(id,selectedCharacter);
             }
         }  
