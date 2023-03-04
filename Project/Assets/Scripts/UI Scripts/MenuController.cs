@@ -24,6 +24,7 @@ public class MenuController : MonoBehaviour
     [Range(0,4)]
     private int numPlayersReady = 0;
     private int currentPlayers;
+    [SerializeField] int requiredNumberOfPlayers = 2;
 
     public TMPro.TextMeshProUGUI playersReadyText;
     public TMPro.TextMeshProUGUI currentPlayersText;
@@ -100,7 +101,7 @@ public class MenuController : MonoBehaviour
         numPlayersReady += 1;
         playersReadyText.text = "" + numPlayersReady; 
 
-        if (currentPlayers >= 2)
+        if (currentPlayers >= requiredNumberOfPlayers)
         {
             if (numPlayersReady == currentPlayers)
             {

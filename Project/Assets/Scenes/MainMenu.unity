@@ -2488,6 +2488,7 @@ MonoBehaviour:
   musicFadeTransistion: {fileID: 1075277434}
   camaraTransistion: {fileID: 272572685}
   menuTransistion: {fileID: 1075277434}
+  requiredNumberOfPlayers: 1
   playersReadyText: {fileID: 310053304}
   currentPlayersText: {fileID: 645946005}
 --- !u!82 &1075277433
