@@ -74,7 +74,7 @@ public class MovementHandler : MonoBehaviour
         characters[selectedCharacter].SetActive(true);
 
         rend = GetComponentInChildren<Renderer>();
-        rend.material = thisPlayersMaterial[playerManager.currentAmountOfPlayers];
+        rend.material = thisPlayersMaterial[selectedCharacter];
     }
 
     // Enabling and disabling controls if gameObject gets enabled or disabled (error handling)
