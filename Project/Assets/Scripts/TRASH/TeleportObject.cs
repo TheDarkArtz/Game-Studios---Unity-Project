@@ -9,7 +9,7 @@ public class TeleportObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-            if (other.CompareTag("Prop"))
-            other.transform.position = teleportProp.transform.position;
+        if (other.CompareTag("Scrap"))
+        other.transform.position = teleportProp.transform.position;
     }
 }
