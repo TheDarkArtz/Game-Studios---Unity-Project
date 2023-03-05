@@ -7,9 +7,6 @@ TagManager:
   - UI
   - Scrap
   - CraftedScrap
-  - Grabbable
-  - Prop
-  - Slow
   layers:
   - Default
   - TransparentFX

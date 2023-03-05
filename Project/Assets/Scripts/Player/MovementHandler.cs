@@ -18,7 +18,7 @@ public class MovementHandler : MonoBehaviour
     private readonly int Hop = Animator.StringToHash("hop");
 
     [Header("Movement")]
-    public float groundDrag;
+    [SerializeField] private float groundDrag;
     [SerializeField] private float turnSpeed;
     [Min(1)] [SerializeField] private float moveSpeed;
 
