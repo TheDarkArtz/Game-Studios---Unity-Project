@@ -193,7 +193,7 @@ MonoBehaviour:
   - {fileID: 1718652031607381115}
   groundDrag: 1.7
   turnSpeed: 5
-  moveSpeed: 13.5
+  moveSpeed: 18
   jumpForce: 5
   jumpCooldown: 1
   movementMultiplier: 0.3
