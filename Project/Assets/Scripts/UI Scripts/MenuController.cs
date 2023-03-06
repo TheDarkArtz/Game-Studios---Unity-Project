@@ -59,13 +59,13 @@ public class MenuController : MonoBehaviour
         menuTransistion.SetTrigger("GoToMenu");
     }
 
-    //The play game event. Called by the play game button.
+    //The play game event.
     public void PlayGame()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-        //The quit game event. Called by the quit game button.
+    //The quit game event. Called by the quit game button.
     public void QuitGame()
     {
         Application.Quit();
