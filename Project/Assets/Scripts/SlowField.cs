@@ -10,7 +10,7 @@ public class SlowField : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             var movement = other.GetComponent<MovementHandler>();
-            movement.groundDrag = 3.5f;
+            movement.groundDrag = 10f;
         }
   
     }
