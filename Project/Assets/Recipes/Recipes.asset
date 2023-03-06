@@ -14,27 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Materials:
   - Item:
-    - Cog
     - Tire
-    - Circuit Board
-    Amount: 010000000200000001000000
+    Amount: 03000000
   - Item:
     - Tire
-    - Cog
     - Circuit Board
-    Amount: 010000000200000001000000
+    Amount: 0300000001000000
   - Item:
-    - Tire
+    - Circuit Board
+    - Cog
+    - Lightbulb
+    Amount: 030000000200000001000000
+  - Item:
     - Lightbulb
     - Cog
-    Amount: 010000000200000001000000
-  - Item:
-    - Lightbulb
+    - Tire
     - Circuit Board
-    - Cog
-    Amount: 010000000200000001000000
+    Amount: 04000000020000000100000001000000
   Results:
   - {fileID: 4138936069491897383, guid: 63250ff352a9c854188611dffede2d43, type: 3}
   - {fileID: 4138936069491897383, guid: 0729fddb04a7beb48884c27b5a10491e, type: 3}
-  - {fileID: 4138936069491897383, guid: 52b3e1ebdae9f4e4a952a0979e71bed9, type: 3}
   - {fileID: 4138936069491897383, guid: 012cf06a7acfe3a4ebccb11e909d6acb, type: 3}
+  - {fileID: 4138936069491897383, guid: 52b3e1ebdae9f4e4a952a0979e71bed9, type: 3}
