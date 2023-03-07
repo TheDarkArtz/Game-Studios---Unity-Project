@@ -17,9 +17,9 @@ MonoBehaviour:
     - Tire
     Amount: 03000000
   - Item:
+    - Cog
     - Tire
-    - Circuit Board
-    Amount: 0300000001000000
+    Amount: 0300000002000000
   - Item:
     - Circuit Board
     - Cog
