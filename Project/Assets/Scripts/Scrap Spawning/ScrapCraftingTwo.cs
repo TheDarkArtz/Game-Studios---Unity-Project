@@ -15,6 +15,7 @@ public class ScrapCraftingTwo : MonoBehaviour
     public Transform spawnLocation;
     public materialCounter2[] counters;
     public TMP_Text objectiveText;
+    public GameObject[] objectiveIcon;
 
     private int currentObjective;
 
@@ -48,8 +49,10 @@ public class ScrapCraftingTwo : MonoBehaviour
     // Set the objective the the index of the recipe that is needed
     private void setObjective()
     {
+        objectiveIcon[currentObjective].SetActive(false);
         currentObjective = UnityEngine.Random.Range(0,recipes.Results.Count - 1);
         objectiveText.text = recipes.Results[currentObjective].name;
+        objectiveIcon[currentObjective].SetActive(true);
         setObjectiveCounters();
     }
     // Update counters values to reflect the recipe needed
@@ -76,13 +79,11 @@ public class ScrapCraftingTwo : MonoBehaviour
             if(whatIsNeeded[name] == 0)
             {
                 value.gameObject.transform.parent.gameObject.SetActive(false);
-                Debug.Log("can you hear me here");
             }
             else
             {
                 value.text = whatIsNeeded[name].ToString();
                 value.gameObject.transform.parent.gameObject.SetActive(true);
-                Debug.Log("can you hear me here too");
             }
             
         }

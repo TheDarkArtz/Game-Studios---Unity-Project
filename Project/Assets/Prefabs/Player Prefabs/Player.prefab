@@ -229,6 +229,8 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 2048
+  maxDistance: 0.6
+  size: {x: 0.6, y: 2, z: 0.6}
 --- !u!1001 &781152233433383825
 PrefabInstance:
   m_ObjectHideFlags: 0
