@@ -10,6 +10,8 @@ public class Door : MonoBehaviour
     private Vector3 ClosePos;
     private int PlayersPad;
     public int PlayerCountGoal;
+    public bool playerOnButton = false;
+    public Door otherButton;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        playerOnButton = true;
 
         if(col.gameObject.tag == "Player")
         {
@@ -26,6 +29,7 @@ public class Door : MonoBehaviour
             if (PlayersPad == PlayerCountGoal)
             {
                 door.transform.position = OpenPos;
+
             }
 
         }
@@ -33,7 +37,9 @@ public class Door : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        if(col.gameObject.tag == "Player")
+        playerOnButton = false;
+
+        if(col.gameObject.tag == "Player" & otherButton.playerOnButton != true)
         {
             PlayersPad--;
             if (PlayersPad < PlayerCountGoal)
