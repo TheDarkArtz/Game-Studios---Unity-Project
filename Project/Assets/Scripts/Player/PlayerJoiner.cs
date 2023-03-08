@@ -7,6 +7,7 @@ public class PlayerJoiner : MonoBehaviour
     private int playerAmount;
     [SerializeField] private Transform[] SpawnLocations;
     private PlayerManager playerManager;
+    private int joinedPlayers;
 
     private void Awake() 
     {
@@ -28,5 +29,8 @@ public class PlayerJoiner : MonoBehaviour
         player.spawnPoint = SpawnLocations[playerInput.playerIndex];
         player.selectedCharacter = playerManager.playerCharacterInt[playerInput.playerIndex];
 
+        player.thisPlayersMaterial = playerManager.allMaterials[joinedPlayers].mat;
+
+        joinedPlayers++;
     }
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7635796356041508811}
   - component: {fileID: 749255416960513832}
-  - component: {fileID: 3041356563821885180}
   - component: {fileID: 8007419498324304522}
   - component: {fileID: 2064359133530257668}
   - component: {fileID: -576500684946840383}
@@ -50,48 +49,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5775627975003435200}
   m_Mesh: {fileID: 0}
---- !u!23 &3041356563821885180
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775627975003435200}
-  m_Enabled: 0
-  m_CastShadows: 2
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &8007419498324304522
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -236,7 +193,7 @@ MonoBehaviour:
   - {fileID: 1718652031607381115}
   groundDrag: 1.7
   turnSpeed: 5
-  moveSpeed: 13.5
+  moveSpeed: 18
   jumpForce: 5
   jumpCooldown: 1
   movementMultiplier: 0.3
@@ -256,6 +213,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playerManager: {fileID: 0}
 --- !u!114 &8587031162106697253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +229,8 @@ MonoBehaviour:
   whatToHit:
     serializedVersion: 2
     m_Bits: 2048
+  maxDistance: 0.6
+  size: {x: 0.6, y: 2, z: 0.6}
 --- !u!1001 &781152233433383825
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,8 +7,8 @@ public class PickUp : MonoBehaviour
 
     private bool hasPickedUpObject;
     private Transform pickUpObjectTransform;
-    private float maxDistance = .6f;
-    private Vector3 size = new Vector3(.5f,2f,.5f);
+    [SerializeField] private float maxDistance = .6f;
+    [SerializeField] private Vector3 size = new Vector3(.5f,2f,.5f);
 
     private UIFaceCamera lastUI;
 

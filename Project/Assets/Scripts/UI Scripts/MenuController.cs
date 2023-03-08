@@ -24,6 +24,7 @@ public class MenuController : MonoBehaviour
     [Range(0,4)]
     private int numPlayersReady = 0;
     private int currentPlayers;
+    [SerializeField] int requiredNumberOfPlayers = 2;
 
     public TMPro.TextMeshProUGUI playersReadyText;
     public TMPro.TextMeshProUGUI currentPlayersText;
@@ -58,13 +59,13 @@ public class MenuController : MonoBehaviour
         menuTransistion.SetTrigger("GoToMenu");
     }
 
-    //The play game event. Called by the play game button.
+    //The play game event.
     public void PlayGame()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-        //The quit game event. Called by the quit game button.
+    //The quit game event. Called by the quit game button.
     public void QuitGame()
     {
         Application.Quit();
@@ -100,7 +101,7 @@ public class MenuController : MonoBehaviour
         numPlayersReady += 1;
         playersReadyText.text = "" + numPlayersReady; 
 
-        if (currentPlayers >= 2)
+        if (currentPlayers >= requiredNumberOfPlayers)
         {
             if (numPlayersReady == currentPlayers)
             {

@@ -3,7 +3,102 @@ guid: 4f7e7d3eaa271c34dba26fe319931351
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Big_Wall
+    second: {fileID: 2100000, guid: 59249d2828299064b9eb2d280cde2a17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Communs
+    second: {fileID: 2100000, guid: d770d6e641d50324784e052a220bbb92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detail1
+    second: {fileID: 2100000, guid: 2206ed9db0e21224a8ac1a7d519a4908, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door1
+    second: {fileID: 2100000, guid: cdd35aa27c228ee489110805553eace2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_lights
+    second: {fileID: 2100000, guid: b6bbfd436f23eda4aa5b9029fa41cb4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_warning
+    second: {fileID: 2100000, guid: ca96515dc7db8954b819a582895d936d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gate
+    second: {fileID: 2100000, guid: 3a2b879e67a74184197ef0f4102e0e6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MChasei
+    second: {fileID: 2100000, guid: 3f7401d0d2884784e8d453443f915093, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mini_wall
+    second: {fileID: 2100000, guid: 335d5c5ac582a0247aff41ac54364a42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipes1
+    second: {fileID: 2100000, guid: 9e9d2078377bca34e8288ccd58786444, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sculptures_room
+    second: {fileID: 2100000, guid: 3e04d9f4669ca6d4caf4a7fb84caa513, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sides1
+    second: {fileID: 2100000, guid: 39a2354b37e66c448992efe513b378e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Small_walls
+    second: {fileID: 2100000, guid: 525b164c550dbba4eaeeb8a6d3aa3d90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 080a63c4066065d498813579d42c8a8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: b6bbfd436f23eda4aa5b9029fa41cb4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 447fe0c022769564eb0a9f187b16e3c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: 46ae12b9ce0f0144cb0f45a628554ee9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: midddle
+    second: {fileID: 2100000, guid: 0e7e45032dc0d464599d79eebdfa012a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ndChasei
+    second: {fileID: 2100000, guid: 0e7e45032dc0d464599d79eebdfa012a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

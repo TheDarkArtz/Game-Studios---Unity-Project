@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 using System;
 
 [Serializable]
-    public struct materialChanger
-    {
-        public Material[] mat;
-    }
+public struct materialChanger
+{
+    public Material[] mat;
+}
 public class PlayerManager : MonoBehaviour
 {
     public materialChanger[] allMaterials;

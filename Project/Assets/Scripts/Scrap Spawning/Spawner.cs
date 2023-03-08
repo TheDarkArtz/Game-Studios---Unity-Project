@@ -26,9 +26,14 @@ public class Spawner : MonoBehaviour
             currentItems.Add(prefabs[i].name, 0);
         }
 
-        InvokeRepeating(nameof(spawn), initSpawnTime, spawnTimer);
-
         ScrapMaterial.OnScrapDestroyed += scrapDestroyed;
+    }
+
+    private void OnEnable() {
+        InvokeRepeating(nameof(spawn), initSpawnTime, spawnTimer);
+    }
+    private void OnDisable() {
+        CancelInvoke(nameof(spawn));
     }
 
     private void OnDestroy() {
