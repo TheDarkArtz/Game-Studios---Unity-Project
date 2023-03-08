@@ -1,86 +1,8 @@
 fileFormatVersion: 2
-guid: 92d486bc1716ef44e836e889e2c792fc
+guid: 31a7b0ddd69f94d49ae6e67ec3e18418
 ModelImporter:
-  serializedVersion: 21202
-  internalIDToNameTable:
-  - first:
-      74: 496230811475118680
-    second: basis
-  - first:
-      74: 4920018070366110115
-    second: drop
-  - first:
-      74: 6193585361739007894
-    second: 'carrying '
-  - first:
-      74: 6812800787397299375
-    second: chuck
-  - first:
-      74: 4809529283753704848
-    second: getup
-  - first:
-      74: -5949134322283079341
-    second: holding
-  - first:
-      74: 1669697622575372768
-    second: hop
-  - first:
-      74: -7863722915994020741
-    second: walk1
-  - first:
-      74: -3406108324312276562
-    second: working
-  - first:
-      74: -6683392220820474592
-    second: win
-  - first:
-      74: 8076360251129776816
-    second: lose
-  - first:
-      74: -5938492722721708030
-    second: trip
-  - first:
-      74: 665853745831072719
-    second: idle2
-  - first:
-      74: 1372032465177669867
-    second: Armature|basis
-  - first:
-      74: -3244958866395484466
-    second: 'Armature|carrying '
-  - first:
-      74: -6530429513000104753
-    second: Armature|chuck
-  - first:
-      74: 2729032188957131136
-    second: Armature|drop
-  - first:
-      74: -5970594018933339205
-    second: Armature|getup
-  - first:
-      74: -7627713723646191690
-    second: Armature|holding
-  - first:
-      74: 2098250823177813566
-    second: Armature|hop
-  - first:
-      74: 6958968346802185837
-    second: Armature|idle2
-  - first:
-      74: -5908469956508276087
-    second: Armature|lose
-  - first:
-      74: 7446224440748763790
-    second: Armature|trip
-  - first:
-      74: 8849868817492384701
-    second: Armature|walk1
-  - first:
-      74: -5237552157492095756
-    second: Armature|win
-  - first:
-      74: -4310237478409326193
-    second: Armature|working
+  serializedVersion: 21300
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -177,6 +99,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
