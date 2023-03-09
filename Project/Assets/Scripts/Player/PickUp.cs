@@ -15,10 +15,15 @@ public class PickUp : MonoBehaviour
     ScrapMaterial CurrentScapHeld;
 
     private PlayerControls controls;
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip pickUpSound;
+    [SerializeField] private AudioClip dropSound;
     
     private void Awake() {
         controls = new PlayerControls();
         controls.Menu.Start.performed += ctx => PickUpObject(ctx);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -48,6 +53,7 @@ public class PickUp : MonoBehaviour
                     {
                         lastUI.show(false);
                         hasPickedUpObject = true;
+                        audioSource.PlayOneShot(pickUpSound);
                         pickUpObjectTransform = hit.transform;
 
                         CurrentScapHeld.PickedUp();
@@ -76,6 +82,7 @@ public class PickUp : MonoBehaviour
                 rb.useGravity = true;
 
                 hasPickedUpObject = false;
+                audioSource.PlayOneShot(dropSound);
                 pickUpObjectTransform = null;
                 CurrentScapHeld = null;
             }

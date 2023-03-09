@@ -16,7 +16,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Animator crossFadeTransistion;
     [SerializeField] private float transistionTime = 2;
     [SerializeField] private Animator musicFadeTransistion;
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource menuClick;
+    [SerializeField] private AudioSource menuScroll;
     private PlayerManager playerManager;
 
     private void Awake() 
@@ -25,6 +26,8 @@ public class PauseMenu : MonoBehaviour
         controls.Menu.Start.performed += ctx => Pause();
         Cursor.lockState = CursorLockMode.Locked;
         playerManager = FindObjectOfType<PlayerManager>();
+        menuClick.ignoreListenerPause = true;
+        menuScroll.ignoreListenerPause = true;
     }
 
     public void Resume()

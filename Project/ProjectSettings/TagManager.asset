@@ -10,6 +10,9 @@ TagManager:
   - Grabbable
   - Prop
   - Slow
+  - buttons1
+  - buttons2
+  - buttons3
   layers:
   - Default
   - TransparentFX

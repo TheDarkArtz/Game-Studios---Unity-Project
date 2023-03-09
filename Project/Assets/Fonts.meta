@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Project/Assets/Fonts.meta
 guid: 311840fb1c95614479ad7bec2833260f
+========
+guid: e9f4c57cf98d240409ac997012fc5543
+>>>>>>>> origin/Tishane-2:Project/Assets/Prefabs/UpdatedScraps/FBX/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

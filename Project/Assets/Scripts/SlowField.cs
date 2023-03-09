@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class SlowField : MonoBehaviour
 {
-    // Update is called once per frame
+    private AudioSource audioSource;
+    [SerializeField] AudioSource sludgeSound;
+
+    private void Awake() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             var movement = other.GetComponent<MovementHandler>();
             movement.groundDrag = 10f;
+            audioSource.Play();
+            sludgeSound.Play();
         }
   
     }
@@ -21,6 +30,7 @@ public class SlowField : MonoBehaviour
         {
             var movement = other.GetComponent<MovementHandler>();
             movement.groundDrag = 1.7f;
+            sludgeSound.Stop();
         }
     }
 }

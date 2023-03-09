@@ -17,6 +17,11 @@ public class ScrapCraftingTwo : MonoBehaviour
     public TMP_Text objectiveText;
     public GameObject[] objectiveIcon;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip scrapIntoCrafterSFX;
+    [SerializeField] private AudioSource itemCraftingSFX;
+    [SerializeField] private AudioClip sculptureOutOfCrafterSFX;
+
     private int currentObjective;
 
     [SerializeField] private Dictionary<string, TMP_Text> UiCounters = new Dictionary<string, TMP_Text>();
@@ -24,6 +29,11 @@ public class ScrapCraftingTwo : MonoBehaviour
     private Dictionary<string,int> whatIsNeeded = new Dictionary<string, int>();
     
     //private Dictionary<string,int> currentCrafting = new Dictionary<string, int>();
+
+    private void Awake() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start() {
         for(int i = 0; i < counters.Length; i++)
@@ -40,6 +50,8 @@ public class ScrapCraftingTwo : MonoBehaviour
         if (other.CompareTag("Scrap"))
         {
             Destroy(other.gameObject);
+            audioSource.PlayOneShot(scrapIntoCrafterSFX);
+            itemCraftingSFX.Play();
             whatIsNeeded[other.name] = Math.Max(whatIsNeeded[other.name] - 1, 0);
             newCheckCrafting();
             updateCounter(other.name);
@@ -112,6 +124,8 @@ public class ScrapCraftingTwo : MonoBehaviour
     {
         GameObject spawnedThing = Instantiate(CraftedItem, spawnLocation.position, Quaternion.identity);
         spawnedThing.GetComponent<Rigidbody>().AddForce(spawnLocation.forward * 15, ForceMode.Impulse);
+        audioSource.PlayOneShot(sculptureOutOfCrafterSFX);
+        itemCraftingSFX.Stop();
     }
 }
 
