@@ -198,6 +198,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8204008148795460014, guid: a9bcdc75998b0644ba28961225966bc2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7983
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204008148795460014, guid: a9bcdc75998b0644ba28961225966bc2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.83695
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204008148795460014, guid: a9bcdc75998b0644ba28961225966bc2,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -264,3 +274,17 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 9039477727658487930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7523533987745900635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1520628246080624673, guid: a9bcdc75998b0644ba28961225966bc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9039477727658487930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!222 &5392990441701919193
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7523533987745900635}
+  m_CullTransparentMesh: 1

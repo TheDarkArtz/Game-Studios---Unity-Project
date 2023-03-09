@@ -17,22 +17,22 @@ MonoBehaviour:
     - Tire
     Amount: 03000000
   - Item:
-    - Cog
+    - Cog 1
     - Tire
     Amount: 0300000002000000
   - Item:
-    - Circuit Board
-    - Cog
-    - Lightbulb
+    - CircuitBoard
+    - Cog 1
+    - lightbulb 1
     Amount: 030000000200000001000000
   - Item:
-    - Lightbulb
-    - Cog
+    - lightbulb 1
+    - Cog 1
     - Tire
-    - Circuit Board
+    - CircuitBoard
     Amount: 04000000020000000100000001000000
   Results:
-  - {fileID: 4138936069491897383, guid: 63250ff352a9c854188611dffede2d43, type: 3}
-  - {fileID: 4138936069491897383, guid: 0729fddb04a7beb48884c27b5a10491e, type: 3}
-  - {fileID: 4138936069491897383, guid: 012cf06a7acfe3a4ebccb11e909d6acb, type: 3}
-  - {fileID: 4138936069491897383, guid: 52b3e1ebdae9f4e4a952a0979e71bed9, type: 3}
+  - {fileID: 6613751601592159961, guid: c92d43e526f2c3e47bb76e9562a01995, type: 3}
+  - {fileID: 4592812337293649089, guid: a07af3a1fe680984783ea02d298b0d1d, type: 3}
+  - {fileID: 6645789001505336500, guid: 01815fb7d7014f444b4afff699e562a6, type: 3}
+  - {fileID: 7124538605307585027, guid: afd82b761fcead5489fc15d4262c25a3, type: 3}
