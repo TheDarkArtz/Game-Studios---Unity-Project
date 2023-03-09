@@ -29,6 +29,8 @@ public class MenuController : MonoBehaviour
     public TMPro.TextMeshProUGUI playersReadyText;
     public TMPro.TextMeshProUGUI currentPlayersText;
 
+    [SerializeField] AudioSource readySound;
+
     private void Awake() 
     {
         // Displays the mouse, but locks it to the game screen.
@@ -99,7 +101,10 @@ public class MenuController : MonoBehaviour
     void PlayerReady()
     {
         numPlayersReady += 1;
-        playersReadyText.text = "" + numPlayersReady; 
+        playersReadyText.text = "" + numPlayersReady;
+        //buggy so removed for now.
+        //readySound.Play();
+
 
         if (currentPlayers >= requiredNumberOfPlayers)
         {
