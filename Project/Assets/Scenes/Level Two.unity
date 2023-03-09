@@ -21343,6 +21343,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrelClosed (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 7300146561981225484, guid: 8faa88b28732f714fb7ce04950349c50,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7927606595731472566, guid: 8faa88b28732f714fb7ce04950349c50,
         type: 3}
       propertyPath: m_RootOrder
