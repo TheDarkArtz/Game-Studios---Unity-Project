@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 0848be995bb53e442874b35cf7cbccf5
 ModelImporter:
-  serializedVersion: 21202
+  serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: 6069641014905539346
@@ -111,7 +111,17 @@ ModelImporter:
   - first:
       74: 7621376312008851154
     second: Torus.006|TorusAction.009
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: ef327159b1e24dc4eaaca20a6ab7775c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -207,6 +217,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

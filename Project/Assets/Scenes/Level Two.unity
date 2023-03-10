@@ -32096,11 +32096,26 @@ PrefabInstance:
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 1863256433}
+    - target: {fileID: 1423041887610747357, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
     - target: {fileID: 2005118473535080409, guid: ea185287cd9ea9d4c9274b64515d4372,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5283594895793661452, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
+    - target: {fileID: 5816514425189950254, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
     - target: {fileID: 7095123636854404910, guid: ea185287cd9ea9d4c9274b64515d4372,
         type: 3}
       propertyPath: m_RootOrder
@@ -32156,6 +32171,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7253094708880413926, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
     - target: {fileID: 7512391307823240003, guid: ea185287cd9ea9d4c9274b64515d4372,
         type: 3}
       propertyPath: m_IsTrigger
@@ -32166,6 +32186,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTeleporter
       objectReference: {fileID: 0}
+    - target: {fileID: 7620579255077801856, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef327159b1e24dc4eaaca20a6ab7775c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea185287cd9ea9d4c9274b64515d4372, type: 3}
 --- !u!1 &1518468487 stripped
@@ -39263,11 +39288,26 @@ PrefabInstance:
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 1583322208}
+    - target: {fileID: 1423041887610747357, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
     - target: {fileID: 2005118473535080409, guid: ea185287cd9ea9d4c9274b64515d4372,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5283594895793661452, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
+    - target: {fileID: 5816514425189950254, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
     - target: {fileID: 7095123636854404910, guid: ea185287cd9ea9d4c9274b64515d4372,
         type: 3}
       propertyPath: m_RootOrder
@@ -39323,6 +39363,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7253094708880413926, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9052af0c2bbf5444aa6319d56d9eb31b, type: 2}
     - target: {fileID: 7512391307823240003, guid: ea185287cd9ea9d4c9274b64515d4372,
         type: 3}
       propertyPath: m_IsTrigger
@@ -39333,6 +39378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTeleporter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7620579255077801856, guid: ea185287cd9ea9d4c9274b64515d4372,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef327159b1e24dc4eaaca20a6ab7775c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea185287cd9ea9d4c9274b64515d4372, type: 3}
 --- !u!1 &1963281581

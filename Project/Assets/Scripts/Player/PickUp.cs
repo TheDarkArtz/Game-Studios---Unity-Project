@@ -12,7 +12,7 @@ public class PickUp : MonoBehaviour
 
     private UIFaceCamera lastUI;
 
-    ScrapMaterial CurrentScapHeld;
+    ScrapMaterial CurrentScrapHeld;
 
     private PlayerControls controls;
 
@@ -48,15 +48,15 @@ public class PickUp : MonoBehaviour
                 RaycastHit hit;
                 if(Physics.BoxCast(transform.position, size, transform.forward, out hit, transform.rotation, maxDistance, whatToHit)) 
                 {
-                    CurrentScapHeld = hit.transform.GetComponent<ScrapMaterial>();
-                    if (CurrentScapHeld.pickedUp == false)
+                    CurrentScrapHeld = hit.transform.GetComponent<ScrapMaterial>();
+                    if (CurrentScrapHeld.pickedUp == false)
                     {
                         lastUI.show(false);
                         hasPickedUpObject = true;
                         audioSource.PlayOneShot(pickUpSound);
                         pickUpObjectTransform = hit.transform;
 
-                        CurrentScapHeld.PickedUp();
+                        CurrentScrapHeld.PickedUp();
 
                         hit.transform.GetComponent<Collider>().enabled = false;
 
@@ -72,7 +72,7 @@ public class PickUp : MonoBehaviour
             }
             else
             {
-                CurrentScapHeld.Dropped();
+                CurrentScrapHeld.Dropped();
                 pickUpObjectTransform.SetParent(null);
 
                 pickUpObjectTransform.transform.GetComponent<Collider>().enabled = true;
@@ -84,7 +84,7 @@ public class PickUp : MonoBehaviour
                 hasPickedUpObject = false;
                 audioSource.PlayOneShot(dropSound);
                 pickUpObjectTransform = null;
-                CurrentScapHeld = null;
+                CurrentScrapHeld = null;
             }
         }
     }
